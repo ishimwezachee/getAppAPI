@@ -13,6 +13,13 @@ class Validation {
     return Joi.validate(validationObject,schema);
 }
 
+   static loginValidation(validationObject){
+       const schema = {
+        telephone:Joi.number().required(),
+       };
+       return Joi.validate(validationObject,schema);
+   }
+
 }
 
 
