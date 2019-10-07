@@ -15,7 +15,7 @@ class Validation {
 
    static loginValidation(validationObject){
        const schema = {
-        telephone:Joi.number().required(),
+        telephone:Joi.string().required(),
        };
        return Joi.validate(validationObject,schema);
    }

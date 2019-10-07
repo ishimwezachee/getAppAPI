@@ -4,7 +4,7 @@ class UserModel{
             id:1,
             firstName:'divine',
             surName:"umurerwa",
-            telephone:789897980,
+            telephone:"789897980",
             email:'divine@gmail.com',
             nationality:"rwandan",
             category:'client'
@@ -13,7 +13,7 @@ class UserModel{
             id:2,
             firstName:'christian',
             surName:"mucyo",
-            telephone:789897980,
+            telephone:"789897980",
             email:'mucyo@gmail.com',
             nationality:"rwandan",
             category:'client'
@@ -23,7 +23,7 @@ class UserModel{
             id:3,
             firstName:'madjid',
             surName:"alice",
-            telephone:789897980,
+            telephone:"789897980",
             email:'madjid@gmail.com',
             nationality:"rwandan",
             category:'client'
@@ -33,14 +33,14 @@ class UserModel{
             id:4,
             firstName:'eric',
             surName:"niyonsaba",
-            telephone:789897980,
+            telephone:"789897980",
             email:'niyonsaba@gmail.com',
             nationality:"rwandan",
             category:'client'
   
         }];
     }
-
+// check if the userTelephone already exists in the database;
    findUser(telephone){
     return this.users.find(user => user.telephone == telephone);
    }
