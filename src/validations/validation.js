@@ -68,6 +68,14 @@ class Validation {
         userInformationId:Joi.number().required(),
     };
     return Joi.validate(validationObject,schema);
+   };
+
+   static updateUserInformation(validationObject){
+       const schema = {
+        occuption:Joi.array().items(),
+        userInformationId:Joi.number().required(),
+       };
+       return  Joi.validate(validationObject,schema);
    }
 
 }

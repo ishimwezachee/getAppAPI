@@ -171,8 +171,19 @@ class UserInformationModel{
   // view specific user information
   findOneUser(id){
       return this.informations.find(information => information.id ===id);
+  };
+  // updating the user information method
+  updateUserInformation(id,occuption){
+      const occuptionData =this.findOneUser(id);
+      const index = this.informations.indexOf(occuptionData);
+      this.informations[index].occupation = occuption;
+      return this.informations[index];
   }
-
+// delete userInformation ;
+ deleteUserinformation(information){
+     const index = this.informations.indexOf(information);
+     return this.informations.splice(index,1);
+ }
 
 };
 
