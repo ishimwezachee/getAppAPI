@@ -132,6 +132,48 @@ class UserInformationControllers{
          }
      }
     }
+    static updateOccupationUserInformation(req,res){
+       const { occuption } = req.body;
+       const userInformationId = Number(req.params.userInformationId);
+       const validationObject = { occuption,userInformationId};
+       const { error } = Validation.updateUserInformation(validationObject);
+
+       if(error){
+           res.status(400).json({
+               status:400,
+               error:`error ${error}`
+           })
+       }else{
+           // check if the article exists;
+           const occuptionData = UserInformationModel.findOneUser(userInformationId);
+           if(occuptionData){
+               const updatedOccuptionInfo = UserInformationModel.updateUserInformation(userInformationId,occuption);
+               res.status(200).json({
+                   status:200,
+                   data:updatedOccuptionInfo
+               })
+           }else{
+               res.status(404).json({
+                   status:404,
+                   error:"data not found"
+               })
+           }
+       }
+
+    }
+
+    static deleteUserAllInformation(req,res){
+        const userInformationId = Number(req.params.userInformationId);
+        // check if the the information exists
+        const AllUserInformation = UserInformationModel.findOneUser(userInformationId);
+        if(AllUserInformation){
+         const deletedUserInfo = UserInformationModel.deleteUserinformation(userInformationId);
+         res.status(204).json({
+             status:204,
+             data:deletedUserInfo 
+         })
+        }
+    }
 
 }
 
