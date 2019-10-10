@@ -62,6 +62,13 @@ class Validation {
        });
        return Joi.validate(validationObject,schema)
    }
+ 
+   static viewSpecificUserinfoValidation(validationObject){
+    const schema = {
+        userInformationId:Joi.number().required(),
+    };
+    return Joi.validate(validationObject,schema);
+   }
 
 }
 
