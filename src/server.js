@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import UserRoute from "./routes/user";
+import UserInformationRoute from "./routes/userInformation";
 
 const app = express();
 
@@ -9,6 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/auth",UserRoute);
+app.use("/info",UserInformationRoute);
 
 const PORT =  process.env.PORT || 3500;
 
