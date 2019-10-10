@@ -168,6 +168,11 @@ class UserInformationModel{
   return this.informations;
   }
 
+  // view specific user information
+  findOneUser(id){
+      return this.informations.find(information => information.id ===id);
+  }
+
 
 };
 

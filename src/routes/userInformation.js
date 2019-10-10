@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/',UserInformationControllers.createUserInformation);
 router.get('/',UserInformationControllers.viewAllUserInformation);
+router.get('/:userInformationId',UserInformationControllers.viewSpecificUserInformation);
 
 export default router;

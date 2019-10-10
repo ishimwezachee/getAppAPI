@@ -107,6 +107,32 @@ class UserInformationControllers{
         });
     }
 
+    static viewSpecificUserInformation(req,res){
+     const userInformationId = Number(req.params.userInformationId);
+     const validationObject = { userInformationId };
+     const { error } = Validation.viewSpecificUserinfoValidation(validationObject)
+     if(error){
+         res.status(400).json({
+             status:400,
+             error:`error ${error}`
+         });
+     }else{
+         // check if the user exists
+         const userInformation = UserInformationModel.findOneUser(userInformationId);
+         if(userInformation){
+             res.status(200).json({
+                 status:200,
+                 data:userInformation
+             })
+         }else{
+             res.status(400).json({
+                 status:400,
+                 error:"the information does not exist"
+             });
+         }
+     }
+    }
+
 }
 
 export default UserInformationControllers;
