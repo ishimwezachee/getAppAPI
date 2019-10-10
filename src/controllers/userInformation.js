@@ -97,6 +97,14 @@ class UserInformationControllers{
              data:createdUserInformation
          })
      }
+    };
+
+    static viewAllUserInformation(req,res){
+        const userInfomations = UserInformationModel.findAllUserInformation();
+        res.status(200).json({
+            status:200,
+            data:userInfomations
+        });
     }
 
 }

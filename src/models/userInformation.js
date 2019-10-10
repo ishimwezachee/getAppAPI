@@ -163,6 +163,10 @@ class UserInformationModel{
   this.informations.push(newUserInformation);
      return newUserInformation;
  }
+  // view all userInformation 
+  findAllUserInformation(){
+  return this.informations;
+  }
 
 
 };
