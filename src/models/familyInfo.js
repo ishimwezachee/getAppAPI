@@ -36,7 +36,7 @@ class FamilyInformationModel{
     };
   // created the method for ccreating family information 
   createFamilyInformation(information){
-    const newFamilyInfromation ={
+    const newFamilyInformation ={
     id:this.familyInformations.length + 1,
     father_firstName:information.father_firstName,
     father_surName:information.father_surName,
@@ -51,7 +51,7 @@ class FamilyInformationModel{
     dependency:information.dependency
     };
     this.familyInformations.push(newFamilyInfromation);
-    return newFamilyInfromation
+    return newFamilyInformation
   }
 
 
