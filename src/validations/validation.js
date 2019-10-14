@@ -132,6 +132,24 @@ static personalInformationValidation(validationObject){
     return Joi.validate(validationObject,schema)
 }
 
+
+static familyInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        father_firstName:Joi.string().min(3).max(15).required(),
+        father_surName:Joi.string().min(3).max(15).required(),
+        mother_firstName:Joi.string().min(3).max(15).required(),
+        mother_surName:Joi.string().min(3).max(15).required(),
+        spouse_firstName:Joi.string().min(3).max(15).required(),
+        spouse_middleName:Joi.string().min(3).max(15).required(),
+        spouse_surName:Joi.string().min(3).max(15).required(),
+        spouseId:Joi.number().required(),
+        telephone:Joi.number().required(),
+        childrenNumber:Joi.number().required(),
+        dependency:Joi.string().min(3).max(15).required(),
+    });
+    return Joi.validate(validationObject,schema)
+}
+
  
    static viewSpecificUserinfoValidation(validationObject){
     const schema = {
