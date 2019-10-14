@@ -163,11 +163,16 @@ static studentInformationValidation(validationObject){
 }
 
 
-
-
-
-
-
+static employeeInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        position:Joi.string().min(3).max(15).required(),
+        country:Joi.string().min(3).max(15).required(),
+        province:Joi.string().min(3).max(15).required(),
+        district:Joi.string().min(3).max(15).required(),
+        street:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema)
+}
 
 
  
