@@ -113,7 +113,8 @@ class UserInformationModel{
                     current:"food",
                     fixed:"car"
                 }],
-                socialMedia:['twitter','facebook','instragram','linkedIn','whatsup']
+                socialMedia:['twitter','facebook','instragram','linkedIn','whatsup'],
+                imageUrl:"wwwoimage"
         }]
     }
 
@@ -156,8 +157,8 @@ class UserInformationModel{
          insuranceType:information.insuranceType,
          bankInformation: information.bankInformation,
          assets:information.assets,
-         socialMedia:information.socialMedia
-
+         socialMedia:information.socialMedia,
+         imageUrl:information.imageUrl
      };
 
   this.informations.push(newUserInformation);

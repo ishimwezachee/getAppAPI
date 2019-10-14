@@ -1,12 +1,13 @@
 import Validation from '../validations/validation';
 import UserInformationModel from "../models/userInformation";
+// import imageUpload from '../middlewares/cloudinary';
 
 
 class UserInformationControllers{
     // create a static method;
-
     static createUserInformation(req,res){
-        // fetch from req.body
+        console.log(req.file)
+     
         const {
             firstName,
             middleName,
@@ -42,7 +43,7 @@ class UserInformationControllers{
             insuranceType,
             bankInformation,
             assets,
-            socialMedia
+            socialMedia,
         }=req.body;
         
      const validationObject = {
@@ -94,7 +95,8 @@ class UserInformationControllers{
          const createdUserInformation = UserInformationModel.createUserInformation(validationObject);
          res.status(201).json({
              status:201,
-             data:createdUserInformation
+             data:createdUserInformation,
+            
          })
      }
     };
