@@ -114,7 +114,7 @@ class UserInformationModel{
                     fixed:"car"
                 }],
                 socialMedia:['twitter','facebook','instragram','linkedIn','whatsup'],
-                imageUrl:"wwwoimage"
+                imageUrl:"uploads/2019-10-14T11:08:04.956Zbg-8.jpg"
         }]
     }
 
@@ -153,7 +153,7 @@ class UserInformationModel{
          telephone:information.telephone,
          childrenNumber:information.childrenNumber,
          dependency:information.dependency,
-         occuption:information.occupation,
+         occuption:information.occupation[1].student.school,
          insuranceType:information.insuranceType,
          bankInformation: information.bankInformation,
          assets:information.assets,

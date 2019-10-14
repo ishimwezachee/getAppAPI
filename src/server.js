@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import UserRoute from "./routes/user";
-import UserInformationRoute from "./routes/userInformation";
-
+// import UserInformationRoute from "./routes/userInformation";
+import InformationRouter from "./routes/routes";
 const app = express();
 
 // middlewares 
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use("/auth",UserRoute);
-app.use("/info",UserInformationRoute);
+app.use("/info",InformationRouter);
 
 const PORT =  process.env.PORT || 3500;
 
