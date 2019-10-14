@@ -57,7 +57,7 @@ class PersonalInformationControllers{
      if(error){
          res.status(400).json({
              status:400,
-             error:`issue with the unput ${error}`
+             error:`issue with the input ${error}`
          });
      }else{
          // create PersonalInformation 
