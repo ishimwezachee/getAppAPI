@@ -6,7 +6,7 @@ import UserInformationModel from "../models/userInformation";
 class UserInformationControllers{
     // create a static method;
     static createUserInformation(req,res){
-        console.log(req.file)
+        console.log(req.file.path)
      
         const {
             firstName,
@@ -46,6 +46,7 @@ class UserInformationControllers{
             socialMedia,
         }=req.body;
         
+        
      const validationObject = {
             firstName,
             middleName,
@@ -81,7 +82,7 @@ class UserInformationControllers{
             insuranceType,
             bankInformation,
             assets,
-            socialMedia
+            socialMedia,
      };
      
      const { error } = Validation.userInformationValidation(validationObject);
@@ -96,6 +97,7 @@ class UserInformationControllers{
          res.status(201).json({
              status:201,
              data:createdUserInformation,
+             image:req.file.path
             
          })
      }
