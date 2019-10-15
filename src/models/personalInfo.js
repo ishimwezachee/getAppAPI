@@ -1,7 +1,7 @@
 // creeate the class for the data;
 
 class PersonalInfoModel{
-    constructor(req,res){
+    constructor(){
         // created the attribute;
         this.personalInformations=[
             {
