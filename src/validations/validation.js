@@ -174,6 +174,19 @@ static employeeInformationValidation(validationObject){
     return Joi.validate(validationObject,schema)
 }
 
+static self_employeeInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+    businessType:Joi.string().min(3).max(15).required(),
+    businessName:Joi.string().min(3).max(15).required(),
+    tinNumber:Joi.number().required(),
+    country:Joi.string().min(3).max(15).required(),
+    province:Joi.string().min(3).max(15).required(),
+    district:Joi.string().min(3).max(15).required(),
+    street:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema)
+}
+
 
  
    static viewSpecificUserinfoValidation(validationObject){
