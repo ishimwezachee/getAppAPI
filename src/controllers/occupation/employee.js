@@ -1,5 +1,5 @@
-import Validation from "../validations/validation";
-import EmployeeInformationModel from "../models/employee";
+import Validation from "../../validations/validation";
+import EmployeeInformationModel from "../../models/occupation/employee";
 
 class EmployeeInformationControllers{
     // method to create the imployee information 

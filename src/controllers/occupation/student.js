@@ -1,5 +1,5 @@
-import Validation from '../validations/validation';
-import StudentInformationModel from "../models/student";
+import Validation from '../../validations/validation';
+import StudentInformationModel from "../../models/occupation/student";
 
 // create a class that holds all the logics for the student;
 
