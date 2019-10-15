@@ -54,7 +54,7 @@ class PersonalInfoModel{
     // create the methods;
          // create personal information method;
          createPersonalInformation (information){
-    const newPersonaInformation = {
+        const newPersonaInformation = {
         id:this.personalInformations.length + 1,
         firstName:information.firstName,
          middleName:information.middleName,
@@ -75,7 +75,7 @@ class PersonalInfoModel{
          jobEmail:information.jobEmail,
          primaryNumber:information.primaryNumber,
          secondaryNumber:information.secondaryNumber,
-             };
+};
 
              this.personalInformations.push(newPersonaInformation);
              return newPersonaInformation

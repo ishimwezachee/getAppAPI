@@ -19,6 +19,8 @@ class EmployeeInformationControllers{
             district,
             street
         }
+
+        console.log(validationObject);
     // check for the error 
 
     const { error } = Validation.employeeInformationValidation(validationObject);
