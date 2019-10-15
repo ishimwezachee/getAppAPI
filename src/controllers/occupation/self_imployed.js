@@ -1,5 +1,5 @@
-import Validation from "../validations/validation";
-import SelfEmployeeInformationModel from "../models/self_imployed";
+import Validation from "../../validations/validation";
+import SelfEmployeeInformationModel from "../../models/occupation/self_imployed";
 
 
 // create a class that holds all the logics s
