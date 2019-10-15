@@ -1,6 +1,6 @@
 import Joi from 'joi';
 class Validation {
-
+    //SignUpValidation
  static SignUpValidation(validationObject){
     const schema = Joi.object().keys({
         firstName:Joi.string().min(3).max(15).required(),
@@ -12,7 +12,7 @@ class Validation {
     });
     return Joi.validate(validationObject,schema);
 }
-
+    //loginValidation
    static loginValidation(validationObject){
        const schema = {
         telephone:Joi.number().required(),
@@ -20,7 +20,7 @@ class Validation {
        return Joi.validate(validationObject,schema);
    }
 
-
+      //userInformationValidation
    static userInformationValidation(validationObject){
        const schema = Joi.object().keys({
         firstName:Joi.string().min(3).max(15).required(),
@@ -63,50 +63,7 @@ class Validation {
        return Joi.validate(validationObject,schema)
    }
 
-
-   static personalInformationValidation(validationObject){
-    const schema = Joi.object().keys({
-     firstName:Joi.string().min(3).max(15).required(),
-     middleName:Joi.string().min(3).max(15).required(),
-     surName:Joi.string().min(3).max(15).required(),
-     birthDate:Joi.number().required(),
-     birthPlace:Joi.string().min(3).max(15).required(),
-     nationality:Joi.string().min(3).max(15).required(),
-     sex:Joi.string().min(3).max(15).required(),
-     nationalId:Joi.number().required(),
-     martialStatus:Joi.string().min(3).max(15).required(),
-     country:Joi.string().min(3).max(15).required(),
-     province:Joi.string().min(3).max(15).required(),
-     district:Joi.string().min(3).max(15).required(),
-     sector:Joi.string().min(3).max(15).required(),
-     cell:Joi.string().min(3).max(15).required(),
-     village:Joi.string().min(3).max(15).required(),
-     email:Joi.string().email().required(),
-     jobEmail:Joi.string().email().required(),
-     primaryNumber:Joi.number().required(),
-     secondaryNumber:Joi.number().required(),
-     father_firstName:Joi.string().min(3).max(15).required(),
-     father_surName:Joi.string().min(3).max(15).required(),
-     mother_firstName:Joi.string().min(3).max(15).required(),
-     mother_surName:Joi.string().min(3).max(15).required(),
-     spouse_firstName:Joi.string().min(3).max(15).required(),
-     spouse_middleName:Joi.string().min(3).max(15).required(),
-     spouse_surName:Joi.string().min(3).max(15).required(),
-     spouseId:Joi.number().required(),
-     telephone:Joi.number().required(),
-     childrenNumber:Joi.number().required(),
-     dependency:Joi.string().min(3).max(15).required(),
-     occuption:Joi.array().items(),
-     insuranceType:Joi.array().items(),
-     bankInformation:Joi.array().items(),
-     assets:Joi.array().items(),
-     socialMedia:Joi.array().items()
-
-    });
-    return Joi.validate(validationObject,schema)
-}
-
-
+       //personalInformationValidation
 static personalInformationValidation(validationObject){
     const schema = Joi.object().keys({
      firstName:Joi.string().min(3).max(15).required(),
@@ -132,7 +89,7 @@ static personalInformationValidation(validationObject){
     return Joi.validate(validationObject,schema)
 }
 
-
+         //familyInformationValidation
 static familyInformationValidation(validationObject){
     const schema = Joi.object().keys({
         father_firstName:Joi.string().min(3).max(15).required(),
@@ -149,8 +106,8 @@ static familyInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
-
-
+      
+          //studentInformationValidation
 static studentInformationValidation(validationObject){
     const schema = Joi.object().keys({
             school:Joi.string().min(3).max(15).required(),
@@ -161,8 +118,8 @@ static studentInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
-
-
+       
+    //employeeInformationValidation
 static employeeInformationValidation(validationObject){
     const schema = Joi.object().keys({
         position:Joi.string().min(3).max(15).required(),
@@ -173,7 +130,7 @@ static employeeInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
-
+  //self_employeeInformationValidation
 static self_employeeInformationValidation(validationObject){
     const schema = Joi.object().keys({
     businessType:Joi.string().min(3).max(15).required(),
@@ -186,8 +143,19 @@ static self_employeeInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
-
-
+   // OtherInformationValidation
+static OtherInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        businessType:Joi.string().min(3).max(15).required(),
+        businessName:Joi.string().min(3).max(15).required(),
+        description:Joi.string().min(3).max(60).required(),
+        country:Joi.string().min(3).max(15).required(),
+        province:Joi.string().min(3).max(15).required(),
+        district:Joi.string().min(3).max(15).required(),
+        street:Joi.string().min(3).max(15).required(),
+    });
+    return Joi.validate(validationObject,schema)
+}
  
    static viewSpecificUserinfoValidation(validationObject){
     const schema = {
