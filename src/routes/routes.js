@@ -6,6 +6,7 @@ import EmployeeInformationControllers from "../controllers/occupation/employee";
 import SelfEmployeeInformationControllers from '../controllers/occupation/self_imployed';
 import OtherInformationControllers from "../controllers/occupation/other";
 import MituelInformationControllers from "../controllers/insurance/mituel";
+import RssbInformationControllers from "../controllers/insurance/rssb";
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ router.post("/occupation/employee",EmployeeInformationControllers.createEmployee
 router.post("/occupation/selfEmployee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
 router.post("/occupation/other",OtherInformationControllers.createOtherInfomation);
 router.post("/insurance/mituel",MituelInformationControllers.createMituelInformation);
+router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
 
 export default router;
