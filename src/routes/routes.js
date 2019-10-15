@@ -17,6 +17,8 @@ router.post("/occupation/employee",EmployeeInformationControllers.createEmployee
 router.post("/occupation/selfEmployee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
 router.post("/occupation/other",OtherInformationControllers.createOtherInfomation);
 router.post("/insurance/mituel",MituelInformationControllers.createMituelInformation);
+router.post("/insurance/radiant",MituelInformationControllers.createMituelInformation);
+router.post("/insurance/rama",MituelInformationControllers.createMituelInformation);
 router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
 
 export default router;
