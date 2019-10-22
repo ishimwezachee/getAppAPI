@@ -68,6 +68,34 @@ class PersonalInformationControllers{
          }) 
      }
     }
+
+// view specific information
+ static viewSpicificPersonalInformation(req,res){
+     const personalInfoId = Number(req.params.personalInfoId);
+     // check if Information exists;
+     const OnePersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+     if(OnePersonalInfo){
+         res.status(200).json({
+             status:200,
+             data:OnePersonalInfo
+         })
+     }else{
+         res.status(404).json({
+             status:404,
+             message:"data  not found"
+         })
+     }
+ }
+
+ static ViewAllPersonalInforamtion(req,res){
+     // fetch all for the personal infor mation 
+     const informtions = PersonalInformationModel.findAlllPersonalInformation()
+   res.status(200).json({
+      status:200,
+      data:informtions
+   })
+ }
+
 }
 
 export default PersonalInformationControllers;

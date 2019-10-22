@@ -186,6 +186,13 @@ static RssbInformationValidation(validationObject){
     };
     return Joi.validate(validationObject,schema);
    };
+//   // specific PersonalInforamtion
+//    static viewSpecificPersonalinfoValidation(validationObject){
+//     const schema = {
+//         userInformationId:Joi.number().required(),
+//     };
+//     return Joi.validate(validationObject,schema);
+//    };
 
    static updateUserInformation(validationObject){
        const schema = {

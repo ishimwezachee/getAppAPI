@@ -11,6 +11,8 @@ import RssbInformationControllers from "../controllers/insurance/rssb";
 const router = express.Router();
 
 router.post("/personal",PersonalInformationControllers.createPersonalInformation);
+router.get("/personal",PersonalInformationControllers.ViewAllPersonalInforamtion);
+router.get("/personal/:personalInfoId",PersonalInformationControllers.viewSpicificPersonalInformation);
 router.post("/family",FamilyInformationController.createFamilyInformation);
 router.post("/occupation/student",StudentInformationControllers.createStudentInformation);
 router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);

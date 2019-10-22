@@ -78,9 +78,19 @@ class PersonalInfoModel{
 };
 
              this.personalInformations.push(newPersonaInformation);
-             return newPersonaInformation
+             return newPersonaInformation;
          }
 
+        // find one 
+         findOne(id){
+             return this.personalInformations.find(info => info.id === id );
+         }
+   // find all 
+          findAlllPersonalInformation(){
+              return this.personalInformations;
+          }
+
+        // update martialStatus,province,district , sector , cell , village ,email , jobEmail PrimaryNumber , secondaryNumber;
 }
 
 export default new PersonalInfoModel();
