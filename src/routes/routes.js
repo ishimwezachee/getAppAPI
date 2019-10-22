@@ -1,6 +1,6 @@
 import express from "express";
 import PersonalInformationControllers from "../controllers/personalInfo";
-import FamilyInformationController from "../controllers/occupation/familyInfo";
+import FamilyInformationController from "../controllers/familyInfo";
 import StudentInformationControllers from "../controllers/occupation/student";
 import EmployeeInformationControllers from "../controllers/occupation/employee";
 import SelfEmployeeInformationControllers from '../controllers/occupation/self_imployed';
