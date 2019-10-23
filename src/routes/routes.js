@@ -9,10 +9,13 @@ import MituelInformationControllers from "../controllers/insurance/mituel";
 import RssbInformationControllers from "../controllers/insurance/rssb";
 
 const router = express.Router();
-
+              // personal information
+// create personal information 
 router.post("/personal",PersonalInformationControllers.createPersonalInformation);
+// get personal information 
 router.get("/personal",PersonalInformationControllers.ViewAllPersonalInforamtion);
 router.get("/personal/:personalInfoId",PersonalInformationControllers.viewSpicificPersonalInformation);
+// update personal information
 router.patch("/personal/:personalInfoId/martialStatus",PersonalInformationControllers.UpdateMartialStatus);
 router.patch("/personal/:personalInfoId/province",PersonalInformationControllers.UpdateProvince);
 router.patch("/personal/:personalInfoId/district",PersonalInformationControllers.UpdateDistrict);
@@ -21,8 +24,40 @@ router.patch("/personal/:personalInfoId/cell",PersonalInformationControllers.Upd
 router.patch("/personal/:personalInfoId/village",PersonalInformationControllers.UpdateVillage);
 router.patch("/personal/:personalInfoId/email",PersonalInformationControllers.UpdateEmail);
 router.patch("/personal/:personalInfoId/jobEmail",PersonalInformationControllers.UpdateJobEmail);
+//delete personal information data
 router.delete("/personal/:personalInfoId/",PersonalInformationControllers.deletePersonalInformation);
+
+
+             // family information 
+// create family information 
 router.post("/family",FamilyInformationController.createFamilyInformation);
+// get family information 
+router.get("/family",FamilyInformationController.ViewAllFamilyInformation);
+router.get("/family/:familyInfoId",FamilyInformationController.viewSpecificFamilyInformation);
+// update personal information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post("/occupation/student",StudentInformationControllers.createStudentInformation);
 router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
 router.post("/occupation/selfEmployee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
