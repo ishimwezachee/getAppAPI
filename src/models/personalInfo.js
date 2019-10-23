@@ -146,6 +146,12 @@ class PersonalInfoModel{
             this.personalInformations[index].jobEmail = jobEmail
             return this.personalInformations[index];
         }
+
+
+         deletePersonalInformation(fullPersonalInformation){
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            return this.personalInformations.splice(index,1);
+         }
       
 }
 
