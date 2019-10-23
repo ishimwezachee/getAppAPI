@@ -52,8 +52,16 @@ class FamilyInformationModel{
     };
     this.familyInformations.push(newFamilyInfromation);
     return newFamilyInformation
-  }
+  };
 
+  // get one 
+  findOne(id){
+      return this.familyInformations.find(info => info.id === id);
+  }
+ // fetch all 
+ findAllFamilyInformations(){
+     return this.familyInformations
+ }
 
 }
 
