@@ -88,14 +88,266 @@ class PersonalInformationControllers{
  }
 
  static ViewAllPersonalInforamtion(req,res){
-     // fetch all for the personal infor mation 
-     const informtions = PersonalInformationModel.findAlllPersonalInformation()
+     // fetch all for the personal information 
+     const informations = PersonalInformationModel.findAlllPersonalInformation()
    res.status(200).json({
       status:200,
-      data:informtions
+      data:informations
    })
  }
+// update martialStatus info
+ static UpdateMartialStatus(req,res){
+    const { martialStatus } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
 
+    const validationObject  = { personalInfoId, martialStatus};
+    const { error } = Validation.UpdatePersonalInformationMartialStatus(validationObject);
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingMartialStatusMethod(personalInfoId, martialStatus);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation,
+                console:console.log(martialStatus),
+                console:console.log(updatedPersonalInformation)
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+   // update province info
+ static UpdateProvince(req,res){
+    const { province } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { province, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationProvince(validationObject)
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+       console.log(fullPersonalInfo)
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingProvinceMethod(personalInfoId, province);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+    // update district
+ static UpdateDistrict(req,res){
+    const { district } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { district, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationDistrict(validationObject);
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingDistrictMethod(personalInfoId, district)
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+     // update sector
+ static UpdateSector(req,res){
+    const { sector } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = {sector, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationSector(validationObject);
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingSectorMethod(personalInfoId, sector);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation,
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+      // update cell
+ static UpdateCell(req,res){
+    const { cell } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { cell, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationCell(validationObject)
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingCellMethod(personalInfoId,cell)
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+     // update village
+ static UpdateVillage(req,res){
+    const { village } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { village, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationVillage(validationObject);
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+       console.log(fullPersonalInfo)
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingvillageMethod(personalInfoId, village);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation,
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+    // update email
+ static UpdateEmail(req,res){
+    const { email } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { email, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationEmail(validationObject);
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingEmailMethod(personalInfoId, email);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation,
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
+   // update JobEmail
+ static UpdateJobEmail(req,res){
+    const { jobEmail } = req.body;
+    const personalInfoId = Number(req.params.personalInfoId); 
+
+    const validationObject  = { jobEmail, personalInfoId };
+    const { error } = Validation.UpdatePersonalInformationJobEmail(validationObject)
+
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:'issue with the input '
+        });
+    }else{
+        //check if the personal info exists
+        const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+       console.log(fullPersonalInfo)
+        if(fullPersonalInfo){
+        const updatedPersonalInformation = PersonalInformationModel.updatingJobEmailEmail(personalInfoId, jobEmail);
+            res.status(200).json({
+                status:200,
+                data:updatedPersonalInformation,
+            });
+        }else{
+            res.status(404).json({
+                status:404,
+                error:'data was not found'
+            });
+        }
+    }
+    
+ }
 }
 
 export default PersonalInformationControllers;

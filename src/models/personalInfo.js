@@ -90,7 +90,63 @@ class PersonalInfoModel{
               return this.personalInformations;
           }
 
-        // update martialStatus,province,district , sector , cell , village ,email , jobEmail PrimaryNumber , secondaryNumber;
+        // update: martialStatus,province,district , sector , cell , village ,email , jobEmail , secondaryNumber;
+        updatingMartialStatusMethod(id,martialStatus) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].martialStatus = martialStatus;
+            return this.personalInformations[index];
+        }
+         //update province
+        updatingProvinceMethod(id,province) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].province = province
+            return this.personalInformations[index];
+        } 
+       //update district
+        updatingDistrictMethod(id,district) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].district = district
+            return this.personalInformations[index];
+        }
+        //update sector
+        updatingSectorMethod(id,sector) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].sector =sector
+            return this.personalInformations[index];
+        }
+       //update cell
+        updatingCellMethod(id,cell) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].cell = cell
+            return this.personalInformations[index];
+        }
+        // update village
+        updatingvillageMethod(id,village) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].village = village
+            return this.personalInformations[index];
+        }
+      // update email
+        updatingEmailMethod(id,email) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].email = email;
+            return this.personalInformations[index];
+        }
+    //update jobbEmail
+        updatingJobEmailEmail(id,jobEmail) {
+            const fullPersonalInformation = this.findOne(id);
+            const index = this.personalInformations.indexOf(fullPersonalInformation);
+            this.personalInformations[index].jobEmail = jobEmail
+            return this.personalInformations[index];
+        }
+      
 }
 
 export default new PersonalInfoModel();

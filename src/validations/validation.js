@@ -186,13 +186,6 @@ static RssbInformationValidation(validationObject){
     };
     return Joi.validate(validationObject,schema);
    };
-//   // specific PersonalInforamtion
-//    static viewSpecificPersonalinfoValidation(validationObject){
-//     const schema = {
-//         userInformationId:Joi.number().required(),
-//     };
-//     return Joi.validate(validationObject,schema);
-//    };
 
    static updateUserInformation(validationObject){
        const schema = {
@@ -202,6 +195,71 @@ static RssbInformationValidation(validationObject){
        return  Joi.validate(validationObject,schema);
    }
 
+   // validate  updating martialStatus,province,district , sector , cell , village ,email , jobEmail , 
+   static UpdatePersonalInformationMartialStatus(validationObject){
+    const schema = Joi.object().keys({
+    martialStatus:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+    // update province
+   static UpdatePersonalInformationProvince(validationObject){
+    const schema = Joi.object().keys({
+        province:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   //update district
+   static UpdatePersonalInformationDistrict(validationObject){
+    const schema = Joi.object().keys({
+        district:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   //update sector
+   static UpdatePersonalInformationSector(validationObject){
+    const schema = Joi.object().keys({
+        sector:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+    //update cell
+   static UpdatePersonalInformationCell(validationObject){
+    const schema = Joi.object().keys({
+        cell:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update village
+   static UpdatePersonalInformationVillage(validationObject){
+    const schema = Joi.object().keys({
+        village:Joi.string().min(3).max(15).required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update email
+   static UpdatePersonalInformationEmail(validationObject){
+    const schema = Joi.object().keys({
+        email:Joi.string().email().required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+  // update JobEmail
+   static UpdatePersonalInformationJobEmail(validationObject){
+    const schema = Joi.object().keys({
+        JobEmail:Joi.string().email().required(),
+    personalInfoId:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+ 
 }
 
 
