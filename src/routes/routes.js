@@ -13,6 +13,14 @@ const router = express.Router();
 router.post("/personal",PersonalInformationControllers.createPersonalInformation);
 router.get("/personal",PersonalInformationControllers.ViewAllPersonalInforamtion);
 router.get("/personal/:personalInfoId",PersonalInformationControllers.viewSpicificPersonalInformation);
+router.patch("/personal/:personalInfoId/martialStatus",PersonalInformationControllers.UpdateMartialStatus);
+router.patch("/personal/:personalInfoId/province",PersonalInformationControllers.UpdateProvince);
+router.patch("/personal/:personalInfoId/district",PersonalInformationControllers.UpdateDistrict);
+router.patch("/personal/:personalInfoId/sector",PersonalInformationControllers.UpdateSector);
+router.patch("/personal/:personalInfoId/cell",PersonalInformationControllers.UpdateCell);
+router.patch("/personal/:personalInfoId/village",PersonalInformationControllers.UpdateVillage);
+router.patch("/personal/:personalInfoId/email",PersonalInformationControllers.UpdateEmail);
+router.patch("/personal/:personalInfoId/jobEmail",PersonalInformationControllers.UpdateJobEmail);
 router.post("/family",FamilyInformationController.createFamilyInformation);
 router.post("/occupation/student",StudentInformationControllers.createStudentInformation);
 router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
@@ -22,5 +30,7 @@ router.post("/insurance/mituel",MituelInformationControllers.createMituelInforma
 router.post("/insurance/radiant",MituelInformationControllers.createMituelInformation);
 router.post("/insurance/rama",MituelInformationControllers.createMituelInformation);
 router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
+
+
 
 export default router;
