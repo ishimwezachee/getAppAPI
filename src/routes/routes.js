@@ -21,6 +21,7 @@ router.patch("/personal/:personalInfoId/cell",PersonalInformationControllers.Upd
 router.patch("/personal/:personalInfoId/village",PersonalInformationControllers.UpdateVillage);
 router.patch("/personal/:personalInfoId/email",PersonalInformationControllers.UpdateEmail);
 router.patch("/personal/:personalInfoId/jobEmail",PersonalInformationControllers.UpdateJobEmail);
+router.delete("/personal/:personalInfoId/",PersonalInformationControllers.deletePersonalInformation);
 router.post("/family",FamilyInformationController.createFamilyInformation);
 router.post("/occupation/student",StudentInformationControllers.createStudentInformation);
 router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);

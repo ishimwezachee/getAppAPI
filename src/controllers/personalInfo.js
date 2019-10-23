@@ -332,7 +332,6 @@ class PersonalInformationControllers{
     }else{
         //check if the personal info exists
         const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
-       console.log(fullPersonalInfo)
         if(fullPersonalInfo){
         const updatedPersonalInformation = PersonalInformationModel.updatingJobEmailEmail(personalInfoId, jobEmail);
             res.status(200).json({
@@ -348,6 +347,19 @@ class PersonalInformationControllers{
     }
     
  }
+
+ // delete personalInformation 
+
+  static deletePersonalInformation(req,res){
+    const personalInfoId = Number(req.params.personalInfoId);
+    // check if the post exists
+    const fullPersonalInfo = PersonalInformationModel.findOne(personalInfoId);
+    if(fullPersonalInfo){
+        const deletedPersonalInformation = PersonalInformationModel.deletePersonalInformation(fullPersonalInfo);
+        res.status(200).json(deletedPersonalInformation);
+    }
+    
+  }
 }
 
 export default PersonalInformationControllers;
