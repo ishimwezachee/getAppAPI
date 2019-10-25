@@ -56,6 +56,14 @@ class EmployeeInformationControllers{
              })
          }
     }
+    // viewAll employee information
+    static ViewAllEmployeeInformation(req,res){
+        const employeeInformation = EmployeeInformationModel.findAllEmployeeInformations();
+        res.status(200).json({
+            status:200,
+            data:employeeInformation
+        });
+    }
 
 }
 
