@@ -172,6 +172,18 @@ class FamilyInformationControllers{
         }
     }
    }
+
+   // delete family information logic
+    
+   static deleteFamilyInformation(req,res){
+    const familyInfoId = Number(req.params.familyInfoId);
+    // check if the family information exists
+    const fullFamilyInformation = FamilyInformationModel.findOne(familyInfoId);
+    if(fullFamilyInformation){
+        const deletedFamilyInformation = FamilyInformationModel.deleteFamilyInformationMethod(familyInfoId);
+        res.status(200).json(deletedFamilyInformation);
+    }
+   }
 }
 
 export default FamilyInformationControllers;
