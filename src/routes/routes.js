@@ -7,12 +7,14 @@ import SelfEmployeeInformationControllers from '../controllers/occupation/self_i
 import OtherInformationControllers from "../controllers/occupation/other";
 import MituelInformationControllers from "../controllers/insurance/mituel";
 import RssbInformationControllers from "../controllers/insurance/rssb";
+import RadiantInformationControllers from "../controllers/insurance/radiant";
 
 const router = express.Router();
+// =======================================================================================================================
               // personal information
 // create personal information 
 router.post("/personal",PersonalInformationControllers.createPersonalInformation);
-// get personal information 
+// get personal information router.post("insurance/rssb",RssbInformationControllers.createRssbInformation);
 router.get("/personal",PersonalInformationControllers.ViewAllPersonalInforamtion);
 router.get("/personal/:personalInfoId",PersonalInformationControllers.viewSpicificPersonalInformation);
 // update personal information
@@ -26,7 +28,7 @@ router.patch("/personal/:personalInfoId/email",PersonalInformationControllers.Up
 router.patch("/personal/:personalInfoId/jobEmail",PersonalInformationControllers.UpdateJobEmail);
 //delete personal information data
 router.delete("/personal/:personalInfoId/",PersonalInformationControllers.deletePersonalInformation);
-
+// =======================================================================================================================
 
              // family information 
 // create family information 
@@ -41,39 +43,128 @@ router.patch("/family/:familyInfoId/dipendency",FamilyInformationController.upda
 // delete family Information ;
 router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyInformation);
 
+                                            //occupation information 
+// =======================================================================================================================
+                                           // occupation_employment 
+
+    // create employee information 
+    router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
+    // get employee information 
+ 
+    // update employee information 
 
 
+    // delete employee information 
+
+// =======================================================================================================================
+                                                // occupation_self_employment 
 
 
+    // create self_employment  information 
+    router.post("/occupation/self_employee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
+
+    // get self_employment  information 
+ 
+    // update self_employment  information 
 
 
+    // delete self_employment  information 
+
+// =======================================================================================================================
+                                               // occupation_student
 
 
+    // create student information 
+    router.post("/occupation/student",StudentInformationControllers.createStudentInformation)
+    // get student information 
+ 
+    // update student information 
 
 
+    // delete student information 
 
 
+// =======================================================================================================================
+                                                     // occupation_other 
 
 
+    // create other information 
+    router.post("/occupation/other",OtherInformationControllers.createOtherInfomation);
+    // get other information 
+ 
+    // update other information 
 
 
+    // delete other information 
+
+                                                             //insurance information
+    // ======================================================insurance==========================================================================
 
 
+    // =======================================================================================================================
+                                                     // mituel_insurance
 
 
+    // create mituel information 
+    router.post("/insurance/mituel",MituelInformationControllers.createMituelInformation);
+    // get mituel information 
+ 
+    // update mituel information 
 
 
+    // delete mituel information
+
+    // =======================================================================================================================
+                                                     // radiant_insurance
 
 
+    // create radiant information 
+    router.post("/insurance/radiant",RadiantInformationControllers.createRadiantInformation);
+    // get radiant information 
+ 
+    // update radiant information 
 
-router.post("/occupation/student",StudentInformationControllers.createStudentInformation);
-router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
-router.post("/occupation/selfEmployee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
-router.post("/occupation/other",OtherInformationControllers.createOtherInfomation);
-router.post("/insurance/mituel",MituelInformationControllers.createMituelInformation);
-router.post("/insurance/radiant",MituelInformationControllers.createMituelInformation);
-router.post("/insurance/rama",MituelInformationControllers.createMituelInformation);
-router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
+
+    // delete radiant information
+
+    // =======================================================================================================================
+                                                     // rama_insurance 
+
+
+    // create rama information 
+    
+    // get rama information 
+ 
+    // update rama information 
+
+
+    // delete rama information
+
+    // =======================================================================================================================
+                                                     // rssb_insurance 
+
+
+    // create rssb information 
+    router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
+    // get rssb information 
+ 
+    // update rssb information 
+
+
+    // delete rssb information
+
+    // =======================================================================================================================
+                                                     // other_insurance 
+
+
+    // create other information 
+
+    // get other information 
+ 
+    // update other information 
+
+
+    // delete other information
 
 
 
