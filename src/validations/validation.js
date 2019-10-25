@@ -179,7 +179,17 @@ static RssbInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
- 
+ // RadiantInformationValidation
+static radiantInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        holder:Joi.string().min(3).max(15).required(),
+        cardNumber:Joi.number().required(),
+        issueDate:Joi.number().required(),
+        insuranceExpiracy:Joi.number().required(),
+        insuranceCoverage:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema)
+}
    static viewSpecificUserinfoValidation(validationObject){
     const schema = {
         userInformationId:Joi.number().required(),
