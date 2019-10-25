@@ -61,7 +61,29 @@ class FamilyInformationModel{
  // fetch all 
  findAllFamilyInformations(){
      return this.familyInformations
+ };
+
+ // update :telephone
+ updatingTelephoneMethod(id,telephone){
+     const fullFamilyInformation = this.findOne(id);
+     const index = this.familyInformations.indexOf(fullFamilyInformation)
+     this.familyInformations[index].telephone = telephone;
+     return this.familyInformations
  }
+   // updating childrenNumber
+ updatingChildrenNumberMethod(id,childrenNumber){
+    const fullFamilyInformation = this.findOne(id);
+    const index =  this.familyInformations.indexOf(fullFamilyInformation)
+    this.familyInformations[index].childrenNumber = childrenNumber;
+    return this.familyInformations
+}
+ // updating  dependency
+updatingDependencyMethod(id,dependency){
+    const fullFamilyInformation = this.findOne(id);
+    const index =  this.familyInformations.indexOf(fullFamilyInformation)
+    this.familyInformations[index].dependency = dependency;
+    return this.familyInformations
+}
 
 }
 

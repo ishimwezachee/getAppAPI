@@ -89,12 +89,13 @@ class PersonalInformationControllers{
 
  static ViewAllPersonalInforamtion(req,res){
      // fetch all for the personal information 
-     const informations = PersonalInformationModel.findAlllPersonalInformation()
+     const informations = PersonalInformationModel.findAllPersonalInformation()
    res.status(200).json({
       status:200,
       data:informations
    })
  }
+
 // update martialStatus info
  static UpdateMartialStatus(req,res){
     const { martialStatus } = req.body;
@@ -115,9 +116,7 @@ class PersonalInformationControllers{
         const updatedPersonalInformation = PersonalInformationModel.updatingMartialStatusMethod(personalInfoId, martialStatus);
             res.status(200).json({
                 status:200,
-                data:updatedPersonalInformation,
-                console:console.log(martialStatus),
-                console:console.log(updatedPersonalInformation)
+                data:updatedPersonalInformation
             });
         }else{
             res.status(404).json({
