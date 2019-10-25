@@ -86,11 +86,11 @@ class PersonalInfoModel{
              return this.personalInformations.find(info => info.id === id );
          }
    // find all 
-          findAlllPersonalInformation(){
+          findAllPersonalInformation(){
               return this.personalInformations;
           }
 
-        // update: martialStatus,province,district , sector , cell , village ,email , jobEmail , secondaryNumber;
+        // update: martialStatus
         updatingMartialStatusMethod(id,martialStatus) {
             const fullPersonalInformation = this.findOne(id);
             const index = this.personalInformations.indexOf(fullPersonalInformation);

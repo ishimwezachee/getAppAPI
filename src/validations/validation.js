@@ -259,7 +259,31 @@ static RssbInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
- 
+                         // family information ;
+    // update telephone
+    static UpdateFamilyInformationTelephone(validationObject){
+        const schema = Joi.object().keys({
+            familyInfoId:Joi.number().required(),
+            telephone:Joi.number().required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
+      // childrenNumber
+       static UpdateFamilyInformationChildrenNumber(validationObject){
+        const schema = Joi.object().keys({
+        childrenNumber:Joi.number().required(),
+        familyInfoId:Joi.number().required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
+
+       static UpdateFamilyInformationDependecy(validationObject){
+        const schema = Joi.object().keys({
+        dependency:Joi.string().min(3).max(15).required(),
+        familyInfoId:Joi.number().required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
 }
 
 
