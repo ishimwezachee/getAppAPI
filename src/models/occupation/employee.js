@@ -45,6 +45,10 @@ class EmployeeInformationModel{
     findOne(id){
         return this.employeeInformations.find(info => info.id === id);
     }
+    // fetch all 
+    findAllEmployeeInformations(){
+        return this.employeeInformations;
+    }
 }
 
 export default new EmployeeInformationModel();
