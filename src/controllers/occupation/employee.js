@@ -39,6 +39,24 @@ class EmployeeInformationControllers{
     }
 
     }
+    // view a specific employee information 
+    static viewSpecificEmployeeInformation(req,res){
+        const employeeInfoId = Number(req.params.employeeInfoId);
+        // check if the employee information exists 
+         const OneEmployeeInformation = EmployeeInformationModel.findOne(employeeInfoId);
+         if(OneEmployeeInformation){
+         res.status(200).json({
+             status:200,
+             data:OneEmployeeInformation
+         })
+         }else{
+             res.status(404).json({
+                 status:404,
+                 message:"data was not found"
+             })
+         }
+    }
+
 }
 
 export default EmployeeInformationControllers;

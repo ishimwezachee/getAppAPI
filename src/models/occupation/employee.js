@@ -41,6 +41,10 @@ class EmployeeInformationModel{
         this.employeeInformations.push(newEmployeeInformation);
         return newEmployeeInformation;
     }
+    // get one 
+    findOne(id){
+        return this.employeeInformations.find(info => info.id === id);
+    }
 }
 
 export default new EmployeeInformationModel();
