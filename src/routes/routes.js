@@ -34,10 +34,13 @@ router.post("/family",FamilyInformationController.createFamilyInformation);
 // get family information 
 router.get("/family",FamilyInformationController.ViewAllFamilyInformation);
 router.get("/family/:familyInfoId",FamilyInformationController.viewSpecificFamilyInformation);
-// update personal information
+// update family information
 router.patch("/family/:familyInfoId/telephone",FamilyInformationController.UpdatingTelephone);
 router.patch("/family/:familyInfoId/childrenNumber",FamilyInformationController.updatingChildrenNumber);
 router.patch("/family/:familyInfoId/dipendency",FamilyInformationController.updatingDependency);
+// delete family Information ;
+router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyInformation);
+
 
 
 

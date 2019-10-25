@@ -83,7 +83,14 @@ updatingDependencyMethod(id,dependency){
     const index =  this.familyInformations.indexOf(fullFamilyInformation)
     this.familyInformations[index].dependency = dependency;
     return this.familyInformations
-}
+};
+
+// delete family Information 
+  deleteFamilyInformationMethod(familyInformation){
+      const index = this.familyInformations.indexOf(familyInformation);
+          return this.familyInformations.splice(index,1);
+     
+  }
 
 }
 
