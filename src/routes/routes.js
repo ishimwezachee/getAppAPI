@@ -51,7 +51,7 @@ router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyIn
     // create employee information 
     router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
     // get employee information 
- 
+router.get("/occupation/employee/:employeeInfoId",EmployeeInformationControllers.viewSpecificEmployeeInformation)
     // update employee information 
 
 
