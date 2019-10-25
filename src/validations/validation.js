@@ -201,6 +201,21 @@ static ramaInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema)
 }
+
+//OtherInsuranceInformationValidation
+static OtherInsuranceInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        insuranceCompany:Joi.string().min(3).max(15).required(),
+        holder:Joi.string().min(3).max(15).required(),
+        cardNumber:Joi.number().required(),
+        issueDate:Joi.number().required(),
+        insuranceExpiracy:Joi.number().required(),
+        insuranceCoverage:Joi.number().required(),
+        email:Joi.string().email().required(),
+        telephone:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema)
+}
    static viewSpecificUserinfoValidation(validationObject){
     const schema = {
         userInformationId:Joi.number().required(),
