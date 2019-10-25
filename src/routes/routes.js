@@ -9,6 +9,7 @@ import MituelInformationControllers from "../controllers/insurance/mituel";
 import RssbInformationControllers from "../controllers/insurance/rssb";
 import RadiantInformationControllers from "../controllers/insurance/radiant";
 import RamaInformationControllers from "../controllers/insurance/rama";
+import OtherInsuranceInformationControllers from "../controllers/insurance/other"
 const router = express.Router();
 // =======================================================================================================================
               // personal information
@@ -150,7 +151,7 @@ router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyIn
  
     // update rssb information 
 
-
+    
     // delete rssb information
 
     // =======================================================================================================================
@@ -158,7 +159,7 @@ router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyIn
 
 
     // create other information 
-
+    router.post("/insurance/other",OtherInsuranceInformationControllers.createOtherInsuranceInformations);
     // get other information 
  
     // update other information 
