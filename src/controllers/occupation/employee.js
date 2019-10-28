@@ -151,6 +151,35 @@ class EmployeeInformationControllers{
         }
   }
 
+  // update employee information street;
+  static updateEmployeeInformationStreet(req,res){
+    const { street } = req.body;
+    const employeeInfoId = Number(req.params.employeeInfoId);
+      const validationObject = { employeeInfoId,street};
+      // check on the error;
+      const {error} = Validation.UpdateEmployeeInformationStreetValidation(validationObject);
+      if(error){
+          res.status(400).json({
+              status:400,
+              error:"issue with the input"
+          })
+      }else{
+          const fullEmployeeInformation= EmployeeInformationModel.findOne(employeeInfoId);
+          if(fullEmployeeInformation){
+              const updatedEmployeeInfoStreet= EmployeeInformationModel.updateEmployeeInformationStreet(employeeInfoId,street);
+              res.status(201).json({
+                  status:201,
+                  data:updatedEmployeeInfoStreet
+              })
+          }else{
+              res.status(404).json({
+                  status:404,
+                  message:"data was not found"
+              })
+          }
+      }
+}
+
 }
 
 export default EmployeeInformationControllers;
