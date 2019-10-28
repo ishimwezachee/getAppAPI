@@ -78,6 +78,11 @@ class EmployeeInformationModel{
         this.employeeInformations[index].street = street;
         return this.employeeInformations;
     }
+    // delete employee information 
+    deleteEmployeeInformation(information){
+        const index = this.employeeInformations.indexOf(information);
+        return this.employeeInformations.splice(index,1);
+    }
 }
 
 export default new EmployeeInformationModel();

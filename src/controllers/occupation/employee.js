@@ -179,6 +179,16 @@ class EmployeeInformationControllers{
           }
       }
 }
+  // delete employee information 
+static deleteEmployeeInformation(req,res){
+    const employeeInfoId = Number(req.params.employeeInfoId);
+    // check if the the post information exists
+    const employeeInformationPost = EmployeeInformationModel.findOne(employeeInfoId);
+    if(employeeInformationPost){
+        const deletedEmployeeInformation = EmployeeInformationModel.deleteEmployeeInformation(employeeInfoId);
+        res.status(200).json(deletedEmployeeInformation)
+    }
+}
 
 }
 

@@ -59,7 +59,7 @@ router.patch("/occupation/:employeeInfoId/province",EmployeeInformationControlle
 router.patch("/occupation/:employeeInfoId/district",EmployeeInformationControllers.updateEmployeeInformationDistrict)
 router.patch("/occupation/:employeeInfoId/street",EmployeeInformationControllers.updateEmployeeInformationStreet)
     // delete employee information 
-
+router.delete("/occupation/employee/:employeeInfoId",EmployeeInformationControllers.deleteEmployeeInformation);
 // =======================================================================================================================
                                                 // occupation_self_employment 
 
