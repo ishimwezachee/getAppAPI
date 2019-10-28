@@ -71,6 +71,13 @@ class EmployeeInformationModel{
         this.employeeInformations[index].district = district;
         return this.employeeInformations;
     }
+    // update street employee information  
+    updateEmployeeInformationStreet(id,street){
+        const fullEmployeeInformation = this.findOne(id);
+        const index = this.employeeInformations.indexOf(fullEmployeeInformation);
+        this.employeeInformations[index].street = street;
+        return this.employeeInformations;
+    }
 }
 
 export default new EmployeeInformationModel();

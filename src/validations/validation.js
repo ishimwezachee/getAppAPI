@@ -347,6 +347,14 @@ static OtherInsuranceInformationValidation(validationObject){
         });
         return Joi.validate(validationObject,schema);
        }
+       // updating employee district information 
+     static UpdateEmployeeInformationStreetValidation(validationObject){
+        const schema = Joi.object().keys({
+            employeeInfoId:Joi.number().required(),
+            street:Joi.string().min(3).max(15).required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
 }
 
 
