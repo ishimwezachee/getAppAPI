@@ -68,7 +68,8 @@ router.delete("/occupation/employee/:employeeInfoId",EmployeeInformationControll
     router.post("/occupation/self_employee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
 
     // get self_employment  information 
- 
+    router.get("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.viewSpecificSelfEmployeeInformation);
+     router.get("/occupation/self_employee",EmployeeInformationControllers.ViewAllEmployeeInformation);
     // update self_employment  information 
 
 

@@ -1,8 +1,8 @@
 // class for self_imployed 
 
-class SelfImployeeInformationModel{
+class SelfEmployeeInformationModel{
   constructor(req,res){
-    this.SelfImployeeInformations = [
+    this.SelfEmployeeInformations = [
       {
         id:1,
         businessType:"trade",
@@ -40,8 +40,8 @@ class SelfImployeeInformationModel{
   //create the methods for the self_imployed;
 
  createSelfEmployeeInformation(information){
-   const newSelfImployeeInformation={
-    id:this.SelfImployeeInformations.length +1,
+   const newSelfEmployeeInformation={
+    id:this.SelfEmployeeInformations.length +1,
     businessType:information.businessType,
     businessName:information.businessName,
     tinNumber:information.tinNumber,
@@ -51,10 +51,19 @@ class SelfImployeeInformationModel{
     street:information.street
    };
 
-   this.SelfImployeeInformations.push(newSelfImployeeInformation);
-   return newSelfImployeeInformation
+   this.SelfEmployeeInformations.push(newSelfImployeeInformation);
+   return newSelfEmployeeInformation
  }
+ // get one
+findOne(id){
+  return this.SelfEmployeeInformations.find( info => info.id === id);
+}
+// get all 
+ findAllSelfEmployeeInformation(){
+   return this.SelfEmployeeInformations
+ }
+
 }
 
 
- export default new SelfImployeeInformationModel();
+ export default new SelfEmployeeInformationModel();

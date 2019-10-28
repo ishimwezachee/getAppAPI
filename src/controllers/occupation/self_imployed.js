@@ -45,6 +45,32 @@ class SelfEmployeeInformationControllers {
             });
         }
      }
-};
+
+     static viewSpecificSelfEmployeeInformation(req,res){
+         const selfEmployeeInfoId = Number(req.params.selfEmployeeInfoId);
+         // check if the self_employee information exists 
+         const OneSelfEmployeeInformation = SelfEmployeeInformationModel.findOne(selfEmployeeInfoId);
+         if(OneSelfEmployeeInformation){
+             res.status(200).json({
+                 status:200,
+                 data:OneSelfEmployeeInformation
+             })
+         }else{
+             res.status(404).json({
+                 status:404,
+                 message:"data was not found"
+             })
+         }
+        
+     }
+
+     static ViewAllSelfEmployeeInfomation(req,res){
+         const  AllSelfEmployeeInformation = SelfEmployeeInformationModel.findAllSelfEmployeeInformation();
+         res.status(200).json({
+             status:200,
+             data:AllSelfEmployeeInformation
+         })
+     }
+}
 
 export default SelfEmployeeInformationControllers;
