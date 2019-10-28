@@ -72,7 +72,7 @@ class EmployeeInformationControllers{
         const validationObject = { employeeInfoId,position};
 
         // check for the error 
-        const {error } = Validation.UpdateEmployeeInformationPosition(validationObject);
+        const {error } = Validation.UpdateEmployeeInformationPositionValidation(validationObject);
         if(error){
             res.status(400).json({
                 status:400,
@@ -96,11 +96,11 @@ class EmployeeInformationControllers{
     }
 
     // update employee information province;
- static updateEmployeInformationProvince(req,res){
+ static updateEmployeeInformationProvince(req,res){
     const { province } = req.body;
     const employeeInfoId = Number(req.params.employeeInfoId);
     const validationObject = { employeeInfoId,province};
-    const {error} = Validation.UpdateEmployeeInformationProvince(validationObject);
+    const {error} = Validation.UpdateEmployeeInformationProvinceValidation(validationObject);
     if(error){
         res.status(400).json({
             status:400,
@@ -122,6 +122,34 @@ class EmployeeInformationControllers{
         }
     }
  }
+  // update employee information district;
+  static updateEmployeeInformationDistrict(req,res){
+      const { district } = req.body;
+      const employeeInfoId = Number(req.params.employeeInfoId);
+        const validationObject = { employeeInfoId,district};
+        // check on the error;
+        const {error} = Validation.UpdateEmployeeInformationDistrictValidation(validationObject);
+        if(error){
+            res.status(400).json({
+                status:400,
+                error:"issue with the input"
+            })
+        }else{
+            const fullEmployeeInformation= EmployeeInformationModel.findOne(employeeInfoId);
+            if(fullEmployeeInformation){
+                const updatedEmployeeInfoDistrict= EmployeeInformationModel.updateEmployeeInformationDistrict(employeeInfoId,district);
+                res.status(201).json({
+                    status:201,
+                    data:updatedEmployeeInfoDistrict
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+  }
 
 }
 

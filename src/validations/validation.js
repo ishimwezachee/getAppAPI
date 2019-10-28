@@ -324,7 +324,7 @@ static OtherInsuranceInformationValidation(validationObject){
              // updating the insurance ,
 // update the employee: position ,province,district , street
 // updating employee position information 
-  static UpdateEmployeeInformationPosition(validationObject){
+  static UpdateEmployeeInformationPositionValidation(validationObject){
     const schema = Joi.object().keys({
         employeeInfoId:Joi.number().required(),
     position:Joi.string().min(3).max(15).required()
@@ -332,14 +332,21 @@ static OtherInsuranceInformationValidation(validationObject){
     return Joi.validate(validationObject,schema);
    }
    // updating employee province information 
-   static UpdateEmployeeInformationProvince(validationObject){
+   static UpdateEmployeeInformationProvinceValidation(validationObject){
     const schema = Joi.object().keys({
         employeeInfoId:Joi.number().required(),
     province:Joi.string().min(3).max(15).required()
     });
     return Joi.validate(validationObject,schema);
    }
-     
+     // updating employee district information 
+     static UpdateEmployeeInformationDistrictValidation(validationObject){
+        const schema = Joi.object().keys({
+            employeeInfoId:Joi.number().required(),
+            district:Joi.string().min(3).max(15).required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
 }
 
 
