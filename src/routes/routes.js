@@ -49,12 +49,12 @@ router.delete("/family/:familyInfoId",FamilyInformationController.deleteFamilyIn
                                            // occupation_employment 
 
     // create employee information 
-    router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
+router.post("/occupation/employee",EmployeeInformationControllers.createEmployeeInformation);
     // get employee information 
 router.get("/occupation/employee/:employeeInfoId",EmployeeInformationControllers.viewSpecificEmployeeInformation);
 router.get("/occupation/employee",EmployeeInformationControllers.ViewAllEmployeeInformation);
     // update employee information 
-
+router.patch("/occupation/:employeeInfoId/position",EmployeeInformationControllers.UpdateEmployeePositionInformation)
 
     // delete employee information 
 
@@ -91,13 +91,13 @@ router.get("/occupation/employee",EmployeeInformationControllers.ViewAllEmployee
 
 
     // create other information 
-    router.post("/occupation/other",OtherInformationControllers.createOtherInfomation);
-    // get other information 
+    router.post("/occupation/otherOccupation",OtherInformationControllers.createOtherInfomation);
+    // get otherOccupation information 
  
-    // update other information 
+    // update otherOccupation information 
 
 
-    // delete other information 
+    // delete otherOccupation information 
 
                                                              //insurance information
     // ======================================================insurance==========================================================================
