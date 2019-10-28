@@ -55,6 +55,7 @@ router.get("/occupation/employee/:employeeInfoId",EmployeeInformationControllers
 router.get("/occupation/employee",EmployeeInformationControllers.ViewAllEmployeeInformation);
     // update employee information 
 router.patch("/occupation/:employeeInfoId/position",EmployeeInformationControllers.UpdateEmployeePositionInformation)
+router.patch("/occupation/:employeeInfoId/province",EmployeeInformationControllers.updateEmployeInformationProvince)
 
     // delete employee information 
 

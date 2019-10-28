@@ -332,6 +332,13 @@ static OtherInsuranceInformationValidation(validationObject){
     return Joi.validate(validationObject,schema);
    }
    // updating employee province information 
+   static UpdateEmployeeInformationProvince(validationObject){
+    const schema = Joi.object().keys({
+        employeeInfoId:Joi.number().required(),
+    province:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
      
 }
 
