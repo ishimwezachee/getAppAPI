@@ -64,15 +64,18 @@ router.delete("/occupation/employee/:employeeInfoId",EmployeeInformationControll
                                                 // occupation_self_employment 
 
 
-    // create self_employment  information 
-    router.post("/occupation/self_employee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
+// create self_employment  information 
+router.post("/occupation/self_employee",SelfEmployeeInformationControllers.createSelfEmployeeInformation);
 
     // get self_employment  information 
-    router.get("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.viewSpecificSelfEmployeeInformation);
-     router.get("/occupation/self_employee",EmployeeInformationControllers.ViewAllEmployeeInformation);
-    // update self_employment  information 
-
-
+router.get("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.viewSpecificSelfEmployeeInformation);
+router.get("/occupation/self_employee",SelfEmployeeInformationControllers.ViewAllSelfEmployeeInformation);
+// update self_employment  information 
+router.patch("/occupation/self_employee/:selfEmployeeInfoId/businessType",SelfEmployeeInformationControllers.UpdateSelfEmployeeBusinessTypeInformation);
+router.patch("/occupation/self_employee/:selfEmployeeInfoId/businessName",SelfEmployeeInformationControllers.UpdateSelfEmployeeBusinessNameInformation);
+router.patch("/occupation/self_employee/:selfEmployeeInfoId/province",SelfEmployeeInformationControllers.UpdateSelfEmployeeProvinceInformation);
+router.patch("/occupation/self_employee/:selfEmployeeInfoId/district",SelfEmployeeInformationControllers.UpdateSelfEmployeeDistrictInformation);
+router.patch("/occupation/self_employee/:selfEmployeeInfoId/street",SelfEmployeeInformationControllers.UpdateSelfEmployeeStreetInformation);
     // delete self_employment  information 
 
 // =======================================================================================================================
