@@ -57,6 +57,13 @@ class EmployeeInformationModel{
         this.employeeInformations[index].position = position ;
         return this.employeeInformations;
     }
+    // update province employee information  
+    updateEmployeeInformationProvince(id,province){
+        const fullEmployeeInformation = this.findOne(id)
+        const index = this.employeeInformations.indexOf(fullEmployeeInformation);
+        this.employeeInformations[index].province = province
+        return this.employeeInformations
+    }
 }
 
 export default new EmployeeInformationModel();

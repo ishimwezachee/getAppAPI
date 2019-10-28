@@ -65,7 +65,7 @@ class EmployeeInformationControllers{
         });
     }
     
-    // update employee Position inforamtion 
+    // update employee Position information 
     static UpdateEmployeePositionInformation(req,res){
         const { position } = req.body;
         const employeeInfoId = Number(req.params.employeeInfoId);
@@ -94,6 +94,34 @@ class EmployeeInformationControllers{
             }
         }
     }
+
+    // update employee information province;
+ static updateEmployeInformationProvince(req,res){
+    const { province } = req.body;
+    const employeeInfoId = Number(req.params.employeeInfoId);
+    const validationObject = { employeeInfoId,province};
+    const {error} = Validation.UpdateEmployeeInformationProvince(validationObject);
+    if(error){
+        res.status(400).json({
+            status:400,
+            error:"issue made with the input "
+        })
+    }else{
+        const fullEmployeeInformation = EmployeeInformationModel.findOne(employeeInfoId);
+        if(fullEmployeeInformation){
+        const updatedEmployeeInfoProvince = EmployeeInformationModel.updateEmployeeInformationProvince(employeeInfoId,province);
+        res.status(201).json({
+            status:201,
+            data:updatedEmployeeInfoProvince
+        })
+        }else{
+            res.status(404).json({
+                status:404,
+                message:'data was not found'
+            })
+        }
+    }
+ }
 
 }
 
