@@ -217,6 +217,16 @@ class SelfEmployeeInformationControllers {
         }
     }
 }
+
+static deleteSelfEmployeeInformation(req,res){
+    const selfEmployeeInfoId = Number(req.params.selfEmployeeInfoId);
+    //check if the info exists
+    const selfEmployeeInformationPost = SelfEmployeeInformationModel.findOne(selfEmployeeInfoId);
+    if(selfEmployeeInformationPost){
+        const deletedSelfEmployeeInformation = SelfEmployeeInformationModel.deleteSelfEmployeeInformation(selfEmployeeInfoId);
+        res.status(200).json(deletedSelfEmployeeInformation)
+    }
+}
     
 }
 
