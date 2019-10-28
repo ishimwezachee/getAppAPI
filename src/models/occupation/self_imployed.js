@@ -62,6 +62,41 @@ findOne(id){
  findAllSelfEmployeeInformation(){
    return this.SelfEmployeeInformations
  }
+//update the selfEmployee businessType
+updateSelfEmployeeInfoBusinessType(id,businessType){
+ const fullSelfEmployeeEmployeeInformation = this.findOne(id);
+ const index = this.SelfEmployeeInformations.indexOf(fullSelfEmployeeEmployeeInformation);
+ this.SelfEmployeeInformations[index].businessType = businessType;
+ return this.SelfEmployeeInformations;
+}
+//update the selfEmployee businessName
+updateSelfEmployeeInfoBusinessName(id,businessName){
+  const fullSelfEmployeeEmployeeInformation = this.findOne(id);
+  const index = this.SelfEmployeeInformations.indexOf(fullSelfEmployeeEmployeeInformation);
+  this.SelfEmployeeInformations[index].businessName = businessName;
+  return this.SelfEmployeeInformations;
+ }
+//update the selfEmployee province
+updateSelfEmployeeInfoProvince(id,province){
+  const fullSelfEmployeeEmployeeInformation = this.findOne(id);
+  const index = this.SelfEmployeeInformations.indexOf(fullSelfEmployeeEmployeeInformation);
+  this.SelfEmployeeInformations[index].province = province;
+  return this.SelfEmployeeInformations;
+ }
+//update the selfEmployee district
+updateSelfEmployeeInfoDistrict(id,district){
+  const fullSelfEmployeeEmployeeInformation = this.findOne(id);
+  const index = this.SelfEmployeeInformations.indexOf(fullSelfEmployeeEmployeeInformation);
+  this.SelfEmployeeInformations[index].district = district;
+  return this.SelfEmployeeInformations;
+ }
+//update the selfEmployee street
+updateSelfEmployeeInfoStreet(id,street){
+  const fullSelfEmployeeEmployeeInformation = this.findOne(id);
+  const index = this.SelfEmployeeInformations.indexOf(fullSelfEmployeeEmployeeInformation);
+  this.SelfEmployeeInformations[index].street = street;
+  return this.SelfEmployeeInformations;
+ }
 
 }
 

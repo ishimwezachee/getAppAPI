@@ -355,6 +355,49 @@ static OtherInsuranceInformationValidation(validationObject){
         });
         return Joi.validate(validationObject,schema);
        }
+
+       // update the self_employee: businessName,businessType ,province,district , street
+// updating selfEmployee businessType information 
+static UpdateSelfEmployeeInformationBusinessTypeValidation(validationObject){
+    const schema = Joi.object().keys({
+        selfEmployeeInfoId:Joi.number().required(),
+        businessType:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// updating selfEmployee businessName information 
+static UpdateSelfEmployeeInformationBusinessNameValidation(validationObject){
+    const schema = Joi.object().keys({
+        selfEmployeeInfoId:Joi.number().required(),
+        businessName:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// updating selfEmployee province information 
+static UpdateSelfEmployeeInformationProvinceValidation(validationObject){
+    const schema = Joi.object().keys({
+        selfEmployeeInfoId:Joi.number().required(),
+        province:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// updating selfEmployee District information 
+static UpdateSelfEmployeeInformationDisrictValidation(validationObject){
+    const schema = Joi.object().keys({
+        selfEmployeeInfoId:Joi.number().required(),
+        district:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// updating selfEmployee street information 
+static UpdateSelfEmployeeInformationStreetValidation(validationObject){
+    const schema = Joi.object().keys({
+        selfEmployeeInfoId:Joi.number().required(),
+        street:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+
 }
 
 
