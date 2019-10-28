@@ -49,6 +49,14 @@ class EmployeeInformationModel{
     findAllEmployeeInformations(){
         return this.employeeInformations;
     }
+
+    // update the employee: position ,province,district , street
+    updateEmployeeInformationPosition(id,position){
+        const fullEmployeeInformation = this.findOne(id);
+        const index = this.employeeInformations.indexOf(fullEmployeeInformation);
+        this.employeeInformations[index].position = position ;
+        return this.employeeInformations;
+    }
 }
 
 export default new EmployeeInformationModel();

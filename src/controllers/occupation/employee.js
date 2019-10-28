@@ -64,6 +64,36 @@ class EmployeeInformationControllers{
             data:employeeInformation
         });
     }
+    
+    // update employee Position inforamtion 
+    static UpdateEmployeePositionInformation(req,res){
+        const { position } = req.body;
+        const employeeInfoId = Number(req.params.employeeInfoId);
+        const validationObject = { employeeInfoId,position};
+
+        // check for the error 
+        const {error } = Validation.UpdateEmployeeInformationPosition(validationObject);
+        if(error){
+            res.status(400).json({
+                status:400,
+                error : " error was made with the in put "
+            })
+        }else{
+            const fullEmployeeInformation = EmployeeInformationModel.findOne(employeeInfoId)
+            if(fullEmployeeInformation){
+                const updatedEmployeeInfoPosition = EmployeeInformationModel.updateEmployeeInformationPosition(employeeInfoId,position);
+                res.status(201).json({
+                    status:201,
+                    data:updatedEmployeeInfoPosition
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+    }
 
 }
 
