@@ -97,7 +97,11 @@ updateSelfEmployeeInfoStreet(id,street){
   this.SelfEmployeeInformations[index].street = street;
   return this.SelfEmployeeInformations;
  }
-
+ // delete self_employee informations
+ deleteSelfEmployeeInformation(information){
+   const index = this.SelfEmployeeInformations.indexOf(information);
+   return this.SelfEmployeeInformations.splice(index,1);
+ }
 }
 
 

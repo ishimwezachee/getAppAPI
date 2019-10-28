@@ -77,7 +77,7 @@ router.patch("/occupation/self_employee/:selfEmployeeInfoId/province",SelfEmploy
 router.patch("/occupation/self_employee/:selfEmployeeInfoId/district",SelfEmployeeInformationControllers.UpdateSelfEmployeeDistrictInformation);
 router.patch("/occupation/self_employee/:selfEmployeeInfoId/street",SelfEmployeeInformationControllers.UpdateSelfEmployeeStreetInformation);
     // delete self_employment  information 
-
+    router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.deleteSelfEmployeeInformation);
 // =======================================================================================================================
                                                // occupation_student
 
