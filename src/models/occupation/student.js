@@ -43,6 +43,14 @@ class StudentInformationModel{
         this.studentIformations.push(newStudentInformation);
         return newStudentInformation
     }
+    // get one 
+    findOne(id){
+        return this.studentIformations.find(info => info.id === id);
+    }
+    // fetch all 
+    findAllStudentInformation(){
+        return this.studentIformations
+    }
 };
 
 export default new StudentInformationModel();
