@@ -85,7 +85,8 @@ router.patch("/occupation/self_employee/:selfEmployeeInfoId/street",SelfEmployee
     // create student information 
     router.post("/occupation/student",StudentInformationControllers.createStudentInformation)
     // get student information 
- 
+    router.get("/occupation/student/:studentInfoId",StudentInformationControllers.viewSpecificStudentInformation);
+    router.get("/occupation/student",StudentInformationControllers.viewAllStudentInformation);
     // update student information 
 
 
