@@ -76,8 +76,8 @@ router.patch("/occupation/self_employee/:selfEmployeeInfoId/businessName",SelfEm
 router.patch("/occupation/self_employee/:selfEmployeeInfoId/province",SelfEmployeeInformationControllers.UpdateSelfEmployeeProvinceInformation);
 router.patch("/occupation/self_employee/:selfEmployeeInfoId/district",SelfEmployeeInformationControllers.UpdateSelfEmployeeDistrictInformation);
 router.patch("/occupation/self_employee/:selfEmployeeInfoId/street",SelfEmployeeInformationControllers.UpdateSelfEmployeeStreetInformation);
-    // delete self_employment  information 
-    router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.deleteSelfEmployeeInformation);
+// delete self_employment  information 
+router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInformationControllers.deleteSelfEmployeeInformation);
 // =======================================================================================================================
                                                // occupation_student
 
@@ -88,7 +88,10 @@ router.patch("/occupation/self_employee/:selfEmployeeInfoId/street",SelfEmployee
     router.get("/occupation/student/:studentInfoId",StudentInformationControllers.viewSpecificStudentInformation);
     router.get("/occupation/student",StudentInformationControllers.viewAllStudentInformation);
     // update student information 
-
+    router.patch("/occupation/student/:studentInfoId/school",StudentInformationControllers.UpdateStudentSchoolInformationOccupation);
+    router.patch("/occupation/student/:studentInfoId/province",StudentInformationControllers.UpdateStudentProvinceInformationOccupation);
+    router.patch("/occupation/student/:studentInfoId/district",StudentInformationControllers.UpdateStudentDistrictInformationOccupation);
+    router.patch("/occupation/student/:studentInfoId/street",StudentInformationControllers.UpdateStudentStreetInformationOccupation);
 
     // delete student information 
 

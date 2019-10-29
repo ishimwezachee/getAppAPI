@@ -2,7 +2,7 @@
 
 class StudentInformationModel{
     constructor(res,req){
-        this.studentIformations = [
+        this.studentInformations = [
             {
                 id:1,
                 school:"nyagatare",
@@ -33,23 +33,53 @@ class StudentInformationModel{
 
     createStudentInformation(information){
         const newStudentInformation ={
-            id:this.studentIformations.length +1,
+            id:this.studentInformations.length +1,
             school:information.school,
             country:information.country,
             province:information.province,
             district:information.district,
             street:information.street
         };
-        this.studentIformations.push(newStudentInformation);
+        this.studentInformations.push(newStudentInformation);
         return newStudentInformation
     }
     // get one 
     findOne(id){
-        return this.studentIformations.find(info => info.id === id);
+        return this.studentInformations.find(info => info.id === id);
     }
     // fetch all 
     findAllStudentInformation(){
-        return this.studentIformations
+        return this.studentInformations
+    }
+   
+    // update student school information
+    updateStudentInformationSchool(id,school){
+        const fullStudentInformation = this.findOne(id);
+        const index = this.studentInformations.indexOf(fullStudentInformation);
+        this.studentInformations[index].school = school;
+        return this.studentInformations;
+    }
+    // update student province information
+    updateStudentInformationProvince(id,province){
+        const fullStudentInformation = this.findOne(id);
+        const index = this.studentInformations.indexOf(fullStudentInformation);
+        this.studentInformations[index].province = province;
+        return this.studentInformations;
+    }
+    // update student district information
+    updateStudentInformationDistrict(id,district){
+        const fullStudentInformation = this.findOne(id);
+        const index = this.studentInformations.indexOf(fullStudentInformation);
+        this.studentInformations[index].district = district;
+        return this.studentInformations;
+    }
+    
+    // update student street information
+    updateStudentInformationStreet(id,street){
+        const fullStudentInformation = this.findOne(id);
+        const index = this.studentInformations.indexOf(fullStudentInformation);
+        this.studentInformations[index].street = street;
+        return this.studentInformations;
     }
 };
 
