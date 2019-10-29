@@ -397,6 +397,39 @@ static UpdateSelfEmployeeInformationStreetValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+   // validate the updated student school,province , district , street;
+   // update student school
+   static UpdateStudentSchoolInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        studentInfoId:Joi.number().required(),
+        school:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update student province
+   static UpdateStudentProvinceInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        studentInfoId:Joi.number().required(),
+        province:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update student district
+   static UpdateStudentDistrictInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        studentInfoId:Joi.number().required(),
+        district:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update student street
+   static UpdateStudentStreetInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        studentInfoId:Joi.number().required(),
+        street:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
 
 }
 
