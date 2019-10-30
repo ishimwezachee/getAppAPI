@@ -121,7 +121,8 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create mituel information 
     router.post("/insurance/mituel",MituelInformationControllers.createMituelInformation);
     // get mituel information 
- 
+    router.get("/insurance/mituel/:mituelInfoId",MituelInformationControllers.viewSpecificMituelInformation);
+    router.get("/insurance/mituel",MituelInformationControllers.viewAllMituelInformation);
     // update mituel information 
 
 

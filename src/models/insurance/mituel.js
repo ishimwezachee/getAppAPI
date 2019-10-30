@@ -50,6 +50,16 @@ class MituelInformationModel{
         this.mituelInfomations.push(newMituelInformation);
         return newMituelInformation;
     }
+ // get one 
+  findOne(id){
+      return this.mituelInfomations.find(info => info.id ===id)
+  }
+
+  // get all 
+  findAllMituelInformation(){
+      return this.mituelInfomations;
+  }
+
 }
 
 export default new MituelInformationModel();
