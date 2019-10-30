@@ -54,6 +54,14 @@ class OtherInformationModel {
         this.otherInformations.push(newOtherInformation);
         return newOtherInformation
     }
+    // get one 
+    findOne(id){
+        return this.otherInformations.find(info => info.id === id);
+    }
+    // fetch all ;
+    findAllOtherOccupationInformation(){
+        return this.otherInformations;
+    }
 }
 
 export default new OtherInformationModel();

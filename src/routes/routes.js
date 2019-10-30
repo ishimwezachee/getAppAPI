@@ -101,9 +101,10 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
 
 
     // create other information 
-    router.post("/occupation/otherOccupation",OtherInformationControllers.createOtherInfomation);
+    router.post("/occupation/otherOccupation",OtherInformationControllers.createOtherInformation);
     // get otherOccupation information 
- 
+    router.get("/occupation/other/:OtherInfoId",OtherInformationControllers.viewSpecificOtherOccupationInformation);
+    router.get("/occupation/other",OtherInformationControllers.ViewAllOtherOccupationInformation);
     // update otherOccupation information 
 
 
