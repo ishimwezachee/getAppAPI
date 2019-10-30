@@ -52,6 +52,11 @@ class OtherInformationControllers{
                 status:200,
                 data:OneOtherOccupationInformation
             })
+        }else{
+            res.status(404).json({
+                status:404,
+                message:"data was not found"
+            })
         }
     };
 

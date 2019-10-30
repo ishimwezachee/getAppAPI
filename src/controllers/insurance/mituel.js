@@ -38,6 +38,33 @@ class MituelInformationControllers {
             });
         }
     }
+
+    // view spicific mituel information 
+    static viewSpecificMituelInformation(req,res){
+        const mituelInfoId = Number(req.params.mituelInfoId);
+        const OneMituelInfo = MituelInformationModel.findOne(mituelInfoId);
+        if(OneMituelInfo){
+            res.status(200).json({
+                status:200,
+                data:OneMituelInfo
+            })
+        }else{
+            res.status(404).json({
+                status:404,
+                message:"data was not found "
+            });
+        }
+    }
+
+    // vew all mituel information 
+
+    static viewAllMituelInformation(req,res){
+        const allMituelInformation = MituelInformationModel.findAllMituelInformation();
+        res.status(200).json({
+            status:200,
+            data:allMituelInformation
+        })
+    }
 }
 
 export default MituelInformationControllers;
