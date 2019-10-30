@@ -229,5 +229,5 @@ static deleteSelfEmployeeInformation(req,res){
 }
     
 }
-
+ 
 export default SelfEmployeeInformationControllers;

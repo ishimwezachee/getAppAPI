@@ -94,7 +94,7 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.patch("/occupation/student/:studentInfoId/street",StudentInformationControllers.UpdateStudentStreetInformationOccupation);
 
     // delete student information 
-
+     router.delete("/occupation/student/:studentInfoId",StudentInformationControllers.deleteStudentInformationData);
 
 // =======================================================================================================================
                                                      // occupation_other 
