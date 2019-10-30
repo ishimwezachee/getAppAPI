@@ -59,7 +59,35 @@ class MituelInformationModel{
   findAllMituelInformation(){
       return this.mituelInfomations;
   }
-
+   // update mituel information 
+   // update cardNumber
+   updateMituelInformationCardNumber(id,cardNumber){
+       const fullMituelInformation = this.findOne(id);
+       const index = this.mituelInfomations.indexOf(fullMituelInformation);
+       this.mituelInfomations[index].cardNumber = cardNumber;
+       return this.mituelInfomations;
+   }
+   // update issueDate
+   updateMituelInformationIssueDate(id,issueDate){
+    const fullMituelInformation = this.findOne(id);
+    const index = this.mituelInfomations.indexOf(fullMituelInformation);
+    this.mituelInfomations[index].issueDate = issueDate;
+    return this.mituelInfomations;
+}
+   //update insuranceExpiracy
+   updateMituelInformationInsuranceExpiracy(id,insuranceExpiracy){
+    const fullMituelInformation = this.findOne(id);
+    const index = this.mituelInfomations.indexOf(fullMituelInformation);
+    this.mituelInfomations[index].insuranceExpiracy = insuranceExpiracy;
+    return this.mituelInfomations;
+}
+   // update insuranceCoverage
+   updateMituelInformationInsuranceCoverage(id,insuranceCoverage){
+    const fullMituelInformation = this.findOne(id);
+    const index = this.mituelInfomations.indexOf(fullMituelInformation);
+    this.mituelInfomations[index].insuranceCoverage = insuranceCoverage;
+    return this.mituelInfomations;
+}
 }
 
 export default new MituelInformationModel();

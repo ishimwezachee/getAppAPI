@@ -430,6 +430,39 @@ static UpdateSelfEmployeeInformationStreetValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+// validate insurance mituel information :cardNumber,issueDate,insuranceExpiracy,insuranceCoverage
+// validate mituel cardNumber information;
+static UpdateMituelCardNumberInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        mituelInfoId:Joi.number().required(),
+        cardNumber:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate mituel issueDate information;
+static UpdateMituelIssueDateInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        mituelInfoId:Joi.number().required(),
+        issueDate:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate mituel insuranceExpiracy information;
+static UpdateMituelInsuranceExpiracyInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        mituelInfoId:Joi.number().required(),
+        insuranceExpiracy:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate mituel insuranceCoverage information;
+static UpdateMituelInsuranceCoverageInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        mituelInfoId:Joi.number().required(),
+        insuranceCoverage:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
 
 }
 
