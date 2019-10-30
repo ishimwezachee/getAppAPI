@@ -81,8 +81,8 @@ class EmployeeInformationControllers{
             const fullEmployeeInformation = EmployeeInformationModel.findOne(employeeInfoId)
             if(fullEmployeeInformation){
                 const updatedEmployeeInfoPosition = EmployeeInformationModel.updateEmployeeInformationPosition(employeeInfoId,position);
-                res.status(201).json({
-                    status:201,
+                res.status(200).json({
+                    status:200,
                     data:updatedEmployeeInfoPosition
                 })
             }else{
