@@ -183,6 +183,19 @@ class StudentInformationControllers{
             }
         }
     }
+// delete student information 
+static deleteStudentInformationData(req,res){
+    const studentInfoId = Number(req.params.studentInfoId);
+    console.log(studentInfoId)
+    // check if the post information exists;
+    const studentInformationPost = StudentInformationModel.findOne(studentInfoId);
+    console.log(studentInformationPost)
+    if(studentInformationPost){
+        const deletedStudentInformation = StudentInformationModel.deleteStudentInformationMethod(studentInformationPost)
+        res.status(200).json(deletedStudentInformation)
+    }
+}
+   
 }
 
 export default  StudentInformationControllers;

@@ -81,6 +81,11 @@ class StudentInformationModel{
         this.studentInformations[index].street = street;
         return this.studentInformations;
     }
+   // delete  student information 
+   deleteStudentInformationMethod(information){
+    const index = this.studentInformations.indexOf(information);
+    return this.studentInformations.splice(index,1)
+   }
 };
 
 export default new StudentInformationModel();
