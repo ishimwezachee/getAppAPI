@@ -62,6 +62,11 @@ class OtherInformationModel {
     findAllOtherOccupationInformation(){
         return this.otherInformations;
     }
+    // delete otherOccupation information;
+    deleteOtherOccupationInformationMethod(information){
+        const index = this.otherInformations.indexOf(information);
+        return this.otherInformations.splice(index,1)
+    }
 }
 
 export default new OtherInformationModel();

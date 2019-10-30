@@ -109,7 +109,7 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
 
 
     // delete otherOccupation information 
-
+    router.delete("/occupation/other/:OtherInfoId",OtherInformationControllers.deleteOtherOccupationInformation);
                                                              //insurance information
     // ======================================================insurance==========================================================================
 

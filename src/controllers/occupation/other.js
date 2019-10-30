@@ -63,6 +63,15 @@ class OtherInformationControllers{
             data:OtherOccupationInformation
         })
     }
+    // delete OtherOccupation information 
+    static deleteOtherOccupationInformation(req,res){
+        const OtherInfoId = Number(req.params.OtherInfoId);
+        const OtherInformationData = OtherInformationModel.findOne(OtherInfoId);
+        if(OtherInformationData){
+            const deletedOtherOccupationInformation =OtherInformationModel.deleteOtherOccupationInformationMethod(OtherInformationData);
+            res.status(200).json(deletedOtherOccupationInformation)
+        }
+    }
 
 }
 
