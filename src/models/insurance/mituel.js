@@ -88,6 +88,11 @@ class MituelInformationModel{
     this.mituelInfomations[index].insuranceCoverage = insuranceCoverage;
     return this.mituelInfomations;
 }
+// delete mituel information 
+deleteMituelInformation (information){
+    const index = this.mituelInfomations.indexOf(information);
+    return this.mituelInfomations.splice(index,1)
+}
 }
 
 export default new MituelInformationModel();

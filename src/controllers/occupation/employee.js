@@ -184,7 +184,7 @@ static deleteEmployeeInformation(req,res){
     // check if the the post information exists
     const employeeInformationPost = EmployeeInformationModel.findOne(employeeInfoId);
     if(employeeInformationPost){
-        const deletedEmployeeInformation = EmployeeInformationModel.deleteEmployeeInformation(employeeInfoId);
+        const deletedEmployeeInformation = EmployeeInformationModel.deleteEmployeeInformation(employeeInformationPost);
         res.status(200).json(deletedEmployeeInformation)
     }
 }
