@@ -53,6 +53,35 @@ class RadiantInformationModel{
      findAllRadiantInformation(){
          return this.radiantInformations;
      }
+
+     // update cardNumber Information
+     updateRadiantInformationCardNumber(id,cardNumber){
+         const fullRadiantInformation = this.findOne(id);
+         const index = this.radiantInformations.indexOf(fullRadiantInformation);
+         this.radiantInformations[index].cardNumber = cardNumber;
+         return this.radiantInformations;
+     }
+     // update IssueDate Information
+     updateRadiantInformationIssueDate(id,issueDate){
+        const fullRadiantInformation = this.findOne(id);
+        const index = this.radiantInformations.indexOf(fullRadiantInformation);
+        this.radiantInformations[index].issueDate = issueDate;
+        return this.radiantInformations;
+    }
+     // update InsuranceExpiracy Information
+     updateRadiantInformationInsuranceExpiracy(id,insuranceExpiracy){
+        const fullRadiantInformation = this.findOne(id);
+        const index = this.radiantInformations.indexOf(fullRadiantInformation);
+        this.radiantInformations[index].insuranceExpiracy = insuranceExpiracy;
+        return this.radiantInformations;
+    }
+     // update InsuranceCoverage Information
+     updateRadiantInformationInsuranceCoverage(id,insuranceCoverage){
+        const fullRadiantInformation = this.findOne(id);
+        const index = this.radiantInformations.indexOf(fullRadiantInformation);
+        this.radiantInformations[index].insuranceCoverage = insuranceCoverage;
+        return this.radiantInformations;
+    }
 }
 
 
