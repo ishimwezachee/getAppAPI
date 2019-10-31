@@ -137,7 +137,8 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create radiant information 
     router.post("/insurance/radiant",RadiantInformationControllers.createRadiantInformation);
     // get radiant information 
- 
+    router.get("/insurance/radiant/:radiantInfoId",RadiantInformationControllers.viewSpecificRadiantInformation);
+    router.get("/insurance/radiant",RadiantInformationControllers.viewAllRadiantInformation);
     // update radiant information 
 
 

@@ -38,6 +38,32 @@ class RadiantInformationController{
             })
         }
     }
+
+  // view specific radiant information 
+  static viewSpecificRadiantInformation(req,res){
+      const radiantInfoId = Number(req.params.radiantInfoId);
+      const OneSpecificInfo = RadiantInformationModel.findOne(radiantInfoId);
+      if(OneSpecificInfo){
+          res.status(200).json({
+              status:200,
+              data:OneSpecificInfo
+          })
+      }else{
+          res.status(404).json({
+              status:200,
+              message:"data was not found"
+          })
+      }
+  }
+
+  // view all radiant information ;
+  static viewAllRadiantInformation(req,res){
+      const allRadiantInformation = RadiantInformationModel.findAllRadiantInformation();
+      res.status(200).json({
+          status:200,
+          data:allRadiantInformation
+      })
+  }
 }
 
 export default RadiantInformationController

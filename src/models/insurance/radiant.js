@@ -45,6 +45,14 @@ class RadiantInformationModel{
          this.radiantInformations.push(newRadiantInformation);
          return newRadiantInformation
      }
+     // get one 
+     findOne(id){
+         return this.radiantInformations.find(info => info.id ===id);
+     }
+     // get all
+     findAllRadiantInformation(){
+         return this.radiantInformations;
+     }
 }
 
 
