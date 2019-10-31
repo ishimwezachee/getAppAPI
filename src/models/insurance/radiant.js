@@ -82,6 +82,12 @@ class RadiantInformationModel{
         this.radiantInformations[index].insuranceCoverage = insuranceCoverage;
         return this.radiantInformations;
     }
+    // delete radiant information 
+    deleteRadiantInformation(information){
+        const index = this.radiantInformations.indexOf(information)
+            return this.radiantInformations.splice(index,1)
+       
+    }
 }
 
 
