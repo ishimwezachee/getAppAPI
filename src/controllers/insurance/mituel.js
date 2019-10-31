@@ -182,6 +182,17 @@ class MituelInformationControllers {
             }
         }
     }
+    // delete mituel information 
+    static deleteMituelInformation(req,res){
+        const mituelInfoId =  Number(req.params.mituelInfoId);
+        // check if the info exists;
+        const fullInfo = MituelInformationModel.findOne(mituelInfoId);
+        if(fullInfo){
+            // delete the info 
+            const deletedMituelInfo = MituelInformationModel.deleteMituelInformation(fullInfo);
+            res.status(200).json(deletedMituelInfo)
+        }
+    }
 }
 
 export default MituelInformationControllers;

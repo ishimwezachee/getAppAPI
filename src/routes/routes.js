@@ -107,7 +107,6 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.get("/occupation/other",OtherInformationControllers.ViewAllOtherOccupationInformation);
     // update otherOccupation information 
 
-
     // delete otherOccupation information 
     router.delete("/occupation/other/:OtherInfoId",OtherInformationControllers.deleteOtherOccupationInformation);
                                                              //insurance information
@@ -124,13 +123,13 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.get("/insurance/mituel/:mituelInfoId",MituelInformationControllers.viewSpecificMituelInformation);
     router.get("/insurance/mituel",MituelInformationControllers.viewAllMituelInformation);
     // update mituel information 
-    router.patch("/insurance/mituel/:mituelInfoId/cardNumber",MituelInformationControllers.updateMituelCardNumberInformation);
+     router.patch("/insurance/mituel/:mituelInfoId/cardNumber",MituelInformationControllers.updateMituelCardNumberInformation);
      router.patch("/insurance/mituel/:mituelInfoId/issueDate",MituelInformationControllers.updateMituelIssueDateInformation);
      router.patch("/insurance/mituel/:mituelInfoId/insuranceExpiracy",MituelInformationControllers.updateMituelInsuranceExpiracyInformation);
      router.patch("/insurance/mituel/:mituelInfoId/insuranceCoverage",MituelInformationControllers.updateMituelInsuranceCoverageInformation);
 
     // delete mituel information
- 
+    router.delete("/insurance/mituel/:mituelInfoId/",MituelInformationControllers.deleteMituelInformation);
     // =======================================================================================================================
                                                      // radiant_insurance
 
