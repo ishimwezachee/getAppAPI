@@ -146,7 +146,7 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.patch("/insurance/radiant/:radiantInfoId/insuranceCoverage",RadiantInformationControllers.updateRadiantInsuranceCoverageInformation);
 
     // delete radiant information
-
+    router.delete("/insurance/radiant/:radiantInfoId",RadiantInformationControllers.deleteRadiantInformation);
     // =======================================================================================================================
                                                      // rama_insurance 
 

@@ -181,6 +181,17 @@ class RadiantInformationController{
         }
     }
 }
+
+// delete radiant information ;
+static deleteRadiantInformation(req,res){
+    const radiantInfoId = Number(req.params.radiantInfoId);
+    const fullInfo = RadiantInformationModel.findOne(radiantInfoId);
+    if(fullInfo){
+        // delete the info 
+        const deletedRadiantInfo = RadiantInformationModel.deleteRadiantInformation(fullInfo);
+        res.status(200).json(deletedRadiantInfo);
+    }
+}
 }
 
 export default RadiantInformationController
