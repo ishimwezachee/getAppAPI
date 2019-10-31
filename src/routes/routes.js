@@ -140,7 +140,10 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.get("/insurance/radiant/:radiantInfoId",RadiantInformationControllers.viewSpecificRadiantInformation);
     router.get("/insurance/radiant",RadiantInformationControllers.viewAllRadiantInformation);
     // update radiant information 
-
+    router.patch("/insurance/radiant/:radiantInfoId/cardNumber",RadiantInformationControllers.updateRadiantCardNumberInformation);
+    router.patch("/insurance/radiant/:radiantInfoId/issueDate",RadiantInformationControllers.updateRadiantIssueDateInformation);
+    router.patch("/insurance/radiant/:radiantInfoId/insuranceExpiracy",RadiantInformationControllers.updateRadiantInsuranceExpiracyInformation);
+    router.patch("/insurance/radiant/:radiantInfoId/insuranceCoverage",RadiantInformationControllers.updateRadiantInsuranceCoverageInformation);
 
     // delete radiant information
 

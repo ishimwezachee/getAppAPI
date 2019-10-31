@@ -463,6 +463,39 @@ static UpdateMituelInsuranceCoverageInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+   // validate insurance radiant information :cardNumber,issueDate,insuranceExpiracy,insuranceCoverage
+// validate radiant cardNumber information;
+static UpdateRadiantCardNumberInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        radiantInfoId:Joi.number().required(),
+        cardNumber:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate radiant InsuranceCoverage information;
+static UpdatRadiantInsuranceCoverageInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        radiantInfoId:Joi.number().required(),
+        insuranceCoverage:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate radiant issueDate information;
+static UpdateRadiantIssueDateInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        radiantInfoId:Joi.number().required(),
+        issueDate:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+// validate radiant InsuranceExpiracy information;
+static UpdateRadiantInsuranceExpiracyInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        radiantInfoId:Joi.number().required(),
+        insuranceExpiracy:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
 
 }
 
