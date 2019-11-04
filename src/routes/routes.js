@@ -111,8 +111,6 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.delete("/occupation/other/:OtherInfoId",OtherInformationControllers.deleteOtherOccupationInformation);
                                                              //insurance information
     // ======================================================insurance==========================================================================
-
-
     // =======================================================================================================================
                                                      // mituel_insurance
 
@@ -154,7 +152,8 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create rama information 
     router.post("/insurance/rama",RamaInformationControllers.createRamaInformation);
     // get rama information 
- 
+    router.get("/insurance/rama",RamaInformationControllers.viewAllRamaInformaion);
+    router.get("/insurance/rama/:ramaInfoId",RamaInformationControllers.viewSpecificRamaInformation);
     // update rama information 
 
 

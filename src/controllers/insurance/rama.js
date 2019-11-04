@@ -38,6 +38,31 @@ class RamaInformationControllers{
             })
         }
     }
+
+    // view specific rama information ;
+    static viewSpecificRamaInformation(req,res){
+        const ramaInfoId = Number(req.params.ramaInfoId);
+        const OneRamaInfo = RamaInformationModel.findOne(ramaInfoId);
+        if(OneRamaInfo){
+            res.status(200).json({
+                status:200,
+                data:OneRamaInfo
+            })
+        }else{
+        res.status(404).json({
+            status:404,
+            message:"data was not found"
+        })
+        }
+    }
+    // view all rama insurance information
+    static viewAllRamaInformaion(req,res){
+        const ramaInformation = RamaInformationModel.findAllRamaInformation();
+        res.status(200).json({
+            status:200,
+            data:ramaInformation
+        })
+    }
 }
 
 

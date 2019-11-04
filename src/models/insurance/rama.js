@@ -45,6 +45,14 @@ class RamaInformationModel{
         this.ramaInformations.push(newRamaInformation);
         return newRamaInformation
     }
+    // get one 
+    findOne(id){
+        return this.ramaInformations.find(info => info.id ===id);
+    }
+    //  get all ramaInformation;
+    findAllRamaInformation(){
+        return this.ramaInformations;
+    }
 };
 
 export default new RamaInformationModel();
