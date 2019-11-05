@@ -1,4 +1,4 @@
-import Validition from '../../validations/validation';
+import Validation from '../../validations/validation';
 import RssbInformationModel from "../../models/insurance/rssb";
 
 
@@ -63,6 +63,129 @@ class RssbInformationControllers {
             status:200,
             data:allRssbInformation
         })
+    }
+    // update rssb cardNumber information 
+    static updateRssbCardNumberInformation(req,res){
+        const { cardNumber } = req.body;
+        const rssbInfoId = Number(req.params.rssbInfoId);
+        const validationObject = { rssbInfoId,cardNumber }
+        // check for the error;
+        const { error } = Validation.UpdateRssbCardNumberInformationValidation(validationObject);
+        if(error){
+            res.status(404).json({
+                status:404,
+                error:"issue with the input "
+            })
+        }else{
+            const fullRssbInformation = RssbInformationModel.findOne(rssbInfoId);
+            if(fullRssbInformation){
+                const updatedRssbInfoCardNumber = RssbInformationModel.updateRssbInformationCardNumber(rssbInfoId,cardNumber);
+                res.status(200).json({
+                    status:200,
+                    data:updatedRssbInfoCardNumber
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+    }
+    // update rssb issueDate information 
+    static updateRssbIssueDateInformation(req,res){
+        const { issueDate } = req.body;
+        const rssbInfoId = Number(req.params.rssbInfoId);
+        const validationObject = { rssbInfoId,issueDate }
+        // check for the error;
+        const { error } = Validation.UpdateRssbIssueDateInformationValidation(validationObject);
+        if(error){
+            res.status(404).json({
+                status:404,
+                error:"issue with the input "
+            })
+        }else{
+            const fullRssbInformation = RssbInformationModel.findOne(rssbInfoId);
+            if(fullRssbInformation){
+                const updatedRssbInfoIssueDate = RssbInformationModel.updateRssbInformationIssueDate(rssbInfoId,issueDate);
+                res.status(200).json({
+                    status:200,
+                    data:updatedRssbInfoIssueDate
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+    }
+    // update rssb insuranceExpiracy information 
+    static updateRssbInsuranceExpiracyInformation(req,res){
+        const { insuranceExpiracy } = req.body;
+        const rssbInfoId = Number(req.params.rssbInfoId);
+        const validationObject = { rssbInfoId,insuranceExpiracy }
+        // check for the error;
+        const { error } = Validation.UpdateRssbInsuranceExpiracyInformationValidation(validationObject);
+        if(error){
+            res.status(404).json({
+                status:404,
+                error:"issue with the input "
+            })
+        }else{
+            const fullRssbInformation = RssbInformationModel.findOne(rssbInfoId);
+            if(fullRssbInformation){
+                const updatedRssbInfoInsuranceExpiracy = RssbInformationModel.updateRssbInformationInsuranceExpiracy(rssbInfoId,insuranceExpiracy);
+                res.status(200).json({
+                    status:200,
+                    data:updatedRssbInfoInsuranceExpiracy
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+    }
+    // update rssb insuranceCoverage information 
+    static updateRssbInsuranceCoverageInformation(req,res){
+        const { insuranceCoverage } = req.body;
+        const rssbInfoId = Number(req.params.rssbInfoId);
+        const validationObject = { rssbInfoId,insuranceCoverage }
+        // check for the error;
+        const { error } = Validation.UpdateRssbInsuranceCoverageInformationValidation(validationObject);
+        if(error){
+            res.status(404).json({
+                status:404,
+                error:"issue with the input "
+            })
+        }else{
+            const fullRssbInformation = RssbInformationModel.findOne(rssbInfoId);
+            if(fullRssbInformation){
+                const updatedRssbInfoInsuranceCoverage = RssbInformationModel.updateRssbInformationInsuranceCoverage(rssbInfoId,insuranceCoverage);
+                res.status(200).json({
+                    status:200,
+                    data:updatedRssbInfoInsuranceCoverage
+                })
+            }else{
+                res.status(404).json({
+                    status:404,
+                    message:"data was not found"
+                })
+            }
+        }
+    }
+    // delete rssb information
+    static deleteRssbInformation(res,req){
+        const rssbInfoId = Number(req.params.rssbInfoId);
+        // check if the info exists 
+        const fullInfo = RssbInformationModel.findOne(rssbInfoId);
+        if(fullInfo){
+            // delete the info;
+            const deletedRssbInfo = RssbInformationModel.deleteRssbInformation(fullInfo);
+            res.status(200).json(deletedRssbInfo);
+        }
     }
 }
 
