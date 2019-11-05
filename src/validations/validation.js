@@ -496,6 +496,38 @@ static UpdateRadiantInsuranceExpiracyInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+// update rama cardNumber information
+   static UpdateRamaCardNumberInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        ramaInfoId:Joi.number().required(),
+        cardNumber:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update rama issueDate information
+   static UpdateRamaIssueDateInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        ramaInfoId:Joi.number().required(),
+        issueDate:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update rama insuranceExpiracy information
+   static UpdateRamaInsuranceExpiracyInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        ramaInfoId:Joi.number().required(),
+        insuranceExpiracy:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+   // update rama insuranceCoverage information
+   static UpdateRamaInsuranceCoverageInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        ramaInfoId:Joi.number().required(),
+        insuranceCoverage:Joi.string().min(3).max(15).required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
 
 }
 

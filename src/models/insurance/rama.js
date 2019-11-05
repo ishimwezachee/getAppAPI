@@ -12,7 +12,7 @@ class RamaInformationModel{
                 insuranceCoverage:"yollo"
             },
             {
-                id:1,
+                id:2,
                 holder:"walcon",
                 cardNumber:56464978,
                 issueDate:34578678,
@@ -20,7 +20,7 @@ class RamaInformationModel{
                 insuranceCoverage:"yollo"
             },
             {
-                id:1,
+                id:3,
                 holder:"gako",
                 cardNumber:56464978,
                 issueDate:34578678,
@@ -32,7 +32,7 @@ class RamaInformationModel{
 
     //create the required method ;
 
-    createRamainformation(information){
+    createRamaInformation(information){
         const newRamaInformation = {
             id:this.ramaInformations.length +1,
             holder:information.holder,
@@ -52,6 +52,41 @@ class RamaInformationModel{
     //  get all ramaInformation;
     findAllRamaInformation(){
         return this.ramaInformations;
+    }
+    //update rama information ;
+    // update CardNumber information ;
+    updateRamaInformationCardNumber(id,cardNumber){
+        const fullInformation = this.findOne(id);
+        const index = this.ramaInformations.indexOf(fullInformation);
+        this.ramaInformations[index].cardNumber =  cardNumber;
+        return this.ramaInformations;
+    }
+    // update issueDate  ;
+    updateRamaInformationIssueDate(id,issueDate){
+        const fullInformation = this.findOne(id);
+        const index = this.ramaInformations.indexOf(fullInformation);
+        this.ramaInformations[index].issueDate =  issueDate;
+        return this.ramaInformations;
+    }
+    // update insuranceExpiracy;
+    updateRamaInformationInsuranceExpiracy(id,insuranceExpiracy){
+        const fullInformation = this.findOne(id);
+        const index = this.ramaInformations.indexOf(fullInformation);
+        this.ramaInformations[index].insuranceExpiracy = insuranceExpiracy;
+        return this.ramaInformations;
+    }
+    // update insuranceCoverage;
+    updateRamaInformationInsuranceCoverage(id,insuranceCoverage){
+        const fullInformation = this.findOne(id);
+        const index = this.ramaInformations.indexOf(fullInformation);
+        this.ramaInformations[index].insuranceCoverage = insuranceCoverage;
+        return this.ramaInformations;
+    }
+
+    // delete rama information ;
+    deleteRamaInformation(information){
+        const index = this.ramaInformations.indexOf(information);
+        return this.ramaInformations.splice(index,1);
     }
 };
 

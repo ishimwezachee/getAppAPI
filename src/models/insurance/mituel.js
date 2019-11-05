@@ -52,7 +52,7 @@ class MituelInformationModel{
     }
  // get one 
   findOne(id){
-      return this.mituelInfomations.find(info => info.id ===id)
+      return this.mituelInfomations.find(info => info.id === id)
   }
 
   // get all 

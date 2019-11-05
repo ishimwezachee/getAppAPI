@@ -5,7 +5,7 @@ import UserRoute from "./routes/user";
 import InformationRouter from "./routes/routes";
 const app = express();
 
-// middlewares 
+// middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
