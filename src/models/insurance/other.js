@@ -55,6 +55,19 @@
          this.otherInsuranceInformations.push(newOtherInsuranceInformation);
          return newOtherInsuranceInformation
      }
+     // get one;
+     findOne(id){
+         return this.otherInsuranceInformations.find( info => info.id === id)
+     }
+     // get all;
+     findAllOtherInsuranceInformation(){
+        return this.otherInsuranceInformations;
+     }
+     // delete other insurance information 
+     deleteOtherInsuranceInformation(information){
+         const index = this.otherInsuranceInformations.indexOf(information);
+         return this.otherInsuranceInformations.splice(index,1);
+     }
  };
 
 

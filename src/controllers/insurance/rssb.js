@@ -177,7 +177,7 @@ class RssbInformationControllers {
         }
     }
     // delete rssb information
-    static deleteRssbInformation(res,req){
+    static deleteRssbInformation(req,res){
         const rssbInfoId = Number(req.params.rssbInfoId);
         // check if the info exists 
         const fullInfo = RssbInformationModel.findOne(rssbInfoId);

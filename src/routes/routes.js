@@ -176,7 +176,7 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.patch("/insurance/rssb/:rssbInfoId/insuranceExpiracy",RssbInformationControllers.updateRssbInsuranceExpiracyInformation);
     router.patch("/insurance/rssb/:rssbInfoId/insuranceCoverage",RssbInformationControllers.updateRssbInsuranceCoverageInformation);
     // delete rssb information
-    router.get("/insurance/rssb/:rssbInfoId",RssbInformationControllers.deleteRssbInformation);
+    router.delete("/insurance/rssb/:rssbInfoId",RssbInformationControllers.deleteRssbInformation);
     // =======================================================================================================================
                                                      // other_insurance 
 
@@ -184,12 +184,12 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create other information 
     router.post("/insurance/other",OtherInsuranceInformationControllers.createOtherInsuranceInformations);
     // get other information 
- 
+    router.get("/insurance/other",OtherInsuranceInformationControllers.viewAllOtherInsuranceInformation);
+    router.get("/insurance/other/:otherInfoId",OtherInsuranceInformationControllers.viewSpecificOtherInsuranceInfo);
     // update other information 
 
-
     // delete other information
-
+    router.delete("/insurance/other/:otherInfoId",OtherInsuranceInformationControllers.deleteOtherInsuranceInfo);
 
 
 export default router;
