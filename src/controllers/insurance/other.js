@@ -43,6 +43,44 @@ class OtherInsuranceInforamationControllers{
          })
      }
     }
+
+    // view specific other insurance information;
+   static viewSpecificOtherInsuranceInfo(req,res){
+       const otherInfoId = Number(req.params.otherInfoId);
+       const OneOtherInsuranceInfo = OtherInsuranceInformationModel.findOne(otherInfoId);
+       if(OneOtherInsuranceInfo){
+           res.status(200).json({
+               status:200,
+               data:OneOtherInsuranceInfo
+           })
+       }else{
+           res.status(404).json({
+               status:404,
+               message:"data was not found"
+           })
+       }
+   }
+
+   // view all other insurance information 
+   static viewAllOtherInsuranceInformation(req,res){
+       const allOtherInsuranceInformation = OtherInsuranceInformationModel.findAllOtherInsuranceInformation();
+       res.status(200).json({
+           status:200,
+           data:allOtherInsuranceInformation
+       })
+   }
+
+   // delete other insurance information 
+   static deleteOtherInsuranceInfo(req,res){
+       const otherInfoId = Number(req.params.otherInfoId);
+       // check if the info exists;
+       const fullInfo = OtherInsuranceInformationModel.findOne(otherInfoId);
+       if(fullInfo){
+           // delete the info;
+           const deletedOtherInsuranceInformation = OtherInsuranceInformationModel.deleteOtherInsuranceInformation(fullInfo);
+           res.status(200).json(deletedOtherInsuranceInformation)
+       }
+   }
 }
 
 export default OtherInsuranceInforamationControllers;
