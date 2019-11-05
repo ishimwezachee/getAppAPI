@@ -81,7 +81,7 @@ class RadiantInformationController{
     }else{
         const fullRadiantInformation = RadiantInformationModel.findOne(radiantInfoId);
         if(fullRadiantInformation){
-            const UpdatedRadiantInfoCardNumber = RadiantInformationModel.updateRadiantInformationCardNumber(radiantInfoId , cardNumber);
+            const UpdatedRadiantInfoCardNumber = RadiantInformationModel.updateRadiantInformationCardNumber(radiantInfoId ,cardNumber);
             res.status(200).json({
                 status:200,
                 data:UpdatedRadiantInfoCardNumber

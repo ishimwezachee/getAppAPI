@@ -152,13 +152,15 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create rama information 
     router.post("/insurance/rama",RamaInformationControllers.createRamaInformation);
     // get rama information 
-    router.get("/insurance/rama",RamaInformationControllers.viewAllRamaInformaion);
+    router.get("/insurance/rama",RamaInformationControllers.viewAllRamaInformation);
     router.get("/insurance/rama/:ramaInfoId",RamaInformationControllers.viewSpecificRamaInformation);
     // update rama information 
-
-
+    router.patch("/insurance/rama/:ramaInfoId/cardNumber",RamaInformationControllers.updateRamaCardNumberInformation);
+    router.patch("/insurance/rama/:ramaInfoId/issueDate",RamaInformationControllers.updateRamaIssueDateInformation);
+    router.patch("/insurance/rama/:ramaInfoId/insuranceExpiracy",RamaInformationControllers.updateRamaInsuranceExpiracyInformation);
+    router.patch("/insurance/rama/:ramaInfoId/insuranceCoverage",RamaInformationControllers.updateRamaInsuranceCoverageInformation);
     // delete rama information
-
+    router.delete("/insurance/rama/:ramaInfoId",RamaInformationControllers.deleteRamaInformation)
     // =======================================================================================================================
                                                      // rssb_insurance 
 
