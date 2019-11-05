@@ -50,6 +50,14 @@ class RssbInformationModel{
         this.rssbInfomations.push(newRssbInformation);
         return newRssbInformation;
     }
+    // get one ;
+    findOne(id){
+        return this.rssbInfomations.find(info => info.id === id)
+    }
+    // get all 
+    findAllRssbInformation(){
+        return this.rssbInfomations;
+    }
 }
 
 export default new RssbInformationModel();
