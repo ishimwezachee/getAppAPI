@@ -168,7 +168,8 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     // create rssb information 
     router.post("/insurance/rssb",RssbInformationControllers.createRssbInformation);
     // get rssb information 
- 
+    router.get("/insurance/rssb",RssbInformationControllers.viewAllRssbInformation);
+    router.get("/insurance/rssb/:rssbInfoId",RssbInformationControllers.viewSpecificRamaInformation);
     // update rssb information 
 
     
