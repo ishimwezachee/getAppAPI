@@ -496,6 +496,8 @@ static UpdateRadiantInsuranceExpiracyInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+
+   // update rama information 
 // update rama cardNumber information
    static UpdateRamaCardNumberInformationValidation(validationObject){
     const schema = Joi.object().keys({
@@ -528,6 +530,39 @@ static UpdateRadiantInsuranceExpiracyInformationValidation(validationObject){
     });
     return Joi.validate(validationObject,schema);
    }
+   // update rssb information
+   // update cardNumber rssb Information
+   static UpdateRssbCardNumberInformationValidation(validationObject){
+    const schema = Joi.object().keys({
+        rssbInfoId:Joi.number().required(),
+        cardNumber:Joi.number().required()
+    });
+    return Joi.validate(validationObject,schema);
+   }
+    // update issueDate rssb Information
+    static UpdateRssbIssueDateInformationValidation(validationObject){
+        const schema = Joi.object().keys({
+            rssbInfoId:Joi.number().required(),
+            issueDate:Joi.number().required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
+       // update insuranceExpiracy rssb Information
+    static UpdateRssbInsuranceExpiracyInformationValidation(validationObject){
+        const schema = Joi.object().keys({
+            rssbInfoId:Joi.number().required(),
+            insuranceExpiracy:Joi.number().required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
+       // update insuranceCoverage rssb Information
+    static UpdateRssbInsuranceCoverageInformationValidation(validationObject){
+        const schema = Joi.object().keys({
+            rssbInfoId:Joi.number().required(),
+            insuranceCoverage:Joi.string().min(3).max(15).required()
+        });
+        return Joi.validate(validationObject,schema);
+       }
 
 }
 

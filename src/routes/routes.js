@@ -171,10 +171,12 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
     router.get("/insurance/rssb",RssbInformationControllers.viewAllRssbInformation);
     router.get("/insurance/rssb/:rssbInfoId",RssbInformationControllers.viewSpecificRamaInformation);
     // update rssb information 
-
-    
+    router.patch("/insurance/rssb/:rssbInfoId/cardNumber",RssbInformationControllers.updateRssbCardNumberInformation);
+    router.patch("/insurance/rssb/:rssbInfoId/issueDate",RssbInformationControllers.updateRssbIssueDateInformation);
+    router.patch("/insurance/rssb/:rssbInfoId/insuranceExpiracy",RssbInformationControllers.updateRssbInsuranceExpiracyInformation);
+    router.patch("/insurance/rssb/:rssbInfoId/insuranceCoverage",RssbInformationControllers.updateRssbInsuranceCoverageInformation);
     // delete rssb information
-
+    router.get("/insurance/rssb/:rssbInfoId",RssbInformationControllers.deleteRssbInformation);
     // =======================================================================================================================
                                                      // other_insurance 
 
