@@ -9,7 +9,7 @@ import MituelInformationControllers from "../controllers/insurance/mituel";
 import RssbInformationControllers from "../controllers/insurance/rssb";
 import RadiantInformationControllers from "../controllers/insurance/radiant";
 import RamaInformationControllers from "../controllers/insurance/rama";
-import OtherInsuranceInformationControllers from "../controllers/insurance/other"
+import OtherInsuranceInformationControllers from "../controllers/insurance/other";
 const router = express.Router();
 // =======================================================================================================================
               // personal information
@@ -190,6 +190,5 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
 
     // delete other information
     router.delete("/insurance/other/:otherInfoId",OtherInsuranceInformationControllers.deleteOtherInsuranceInfo);
-
 
 export default router;
