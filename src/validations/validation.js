@@ -564,6 +564,23 @@ static UpdateRadiantInsuranceExpiracyInformationValidation(validationObject){
         return Joi.validate(validationObject,schema);
        }
 
+         // bank 
+         // create bank;
+         static createBankNameValidation(validationObject){
+            const schema = Joi.object().keys({
+                bankName:Joi.string().min(3).max(15).required()
+            });
+            return Joi.validate(validationObject,schema);
+           }
+         // update bank;
+         static updateBankNameValidation(validationObject){
+            const schema = Joi.object().keys({
+                bankId:Joi.number().required(),
+                bankName:Joi.string().min(3).max(15).required()
+            });
+            return Joi.validate(validationObject,schema);
+           }
+
 }
 
 

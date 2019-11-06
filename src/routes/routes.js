@@ -10,6 +10,7 @@ import RssbInformationControllers from "../controllers/insurance/rssb";
 import RadiantInformationControllers from "../controllers/insurance/radiant";
 import RamaInformationControllers from "../controllers/insurance/rama";
 import OtherInsuranceInformationControllers from "../controllers/insurance/other";
+import BankController from "../controllers/bank/bank";
 const router = express.Router();
 // =======================================================================================================================
               // personal information
@@ -190,5 +191,37 @@ router.delete("/occupation/self_employee/:selfEmployeeInfoId",SelfEmployeeInform
 
     // delete other information
     router.delete("/insurance/other/:otherInfoId",OtherInsuranceInformationControllers.deleteOtherInsuranceInfo);
+// ================================================================================================================================
+                                                                                // Bank;
+     // create a bank 
+     router.post("/bank",BankController.createBankName)
+     // get bank 
+     router.get("/bank",BankController.viewAllBankName);
+     router.get("/bank/:bankId",BankController.viewSpecificBankName)
+     // update bank
+     router.patch("/bank/:bankId",BankController.updateBankName)
+     // delete bank
+     router.delete("/bank/:bankId",BankController.deleteBankName)
+     //============================================AssetsInformation ==============================
+                                                //  fixed assets information
+       // create fixed assets
+       // get fixed assets
+       // update fixed assets
+       // delete fixed assets
+                                               // current assets information 
+       // create current assets
+       // get current assets
+       // update current assets
+       // delete current assets
+       // ======================================social media============================================
+       // create social media 
+       // get social media
+       // update social media
+       // delete social media   
+       //====================================files ========================================
+       // upload files //create files
+       // get files
+       // update files 
+       // delete files 
 
 export default router;
